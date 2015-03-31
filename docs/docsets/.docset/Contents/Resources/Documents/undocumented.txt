@@ -1,0 +1,16 @@
+ViewController.swift
+	class ViewController: NSViewController
+	override func viewDidLoad()
+	override var representedObject: AnyObject?
+AppDelegate.swift
+	class AppDelegate: NSObject, NSApplicationDelegate
+	func applicationDidFinishLaunching(aNotification: NSNotification)
+	func applicationWillTerminate(aNotification: NSNotification)
+Document.swift
+	class Document: NSDocument
+	override init()
+	override func windowControllerDidLoadNib(aController: NSWindowController)
+	override class func autosavesInPlace() -> Bool
+	override func makeWindowControllers()
+	override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData?
+	override func readFromURL(url: NSURL, ofType typeName: String, error outError: NSErrorPointer) -> Bool
