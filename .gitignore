@@ -1,3 +1,5 @@
 Pods
 Podfile.lock
 build
+extracted.tei.xml
+grobid.log
