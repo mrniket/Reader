@@ -11,5 +11,6 @@ end
 
 target 'ReaderTests' do
 	use_frameworks!
+	pod 'Swift-Collections', :git => 'https://github.com/jbulat/Swift-Collections'
 	pod 'Nimble', '~> 0.4.0'
 end
