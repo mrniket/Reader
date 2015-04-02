@@ -18,6 +18,10 @@
 		17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017F1ACB028600E1EB82 /* PDFTests.swift */; };
 		17C801831ACB100700E1EB82 /* ReaderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */; };
 		17C801841ACB101200E1EB82 /* PDFTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F415531ACAF4C000B3A0DC /* PDFTagger.swift */; };
+		17C801861ACB37B400E1EB82 /* PDFUAXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */; };
+		17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801871ACB468D00E1EB82 /* PDFUAContent.swift */; };
+		17C801891ACBFC7700E1EB82 /* PDFUAXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */; };
+		17C8018A1ACBFC7B00E1EB82 /* PDFUAContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801871ACB468D00E1EB82 /* PDFUAContent.swift */; };
 		17F415501ACAEC4E00B3A0DC /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */; };
 		17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F415531ACAF4C000B3A0DC /* PDFTagger.swift */; };
 		C7AEDB24855C16DB40591072 /* Pods_ReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -48,6 +52,8 @@
 		17432C331AC9B6B600AA5859 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
 		17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderConfig.swift; sourceTree = "<group>"; };
 		17C8017F1ACB028600E1EB82 /* PDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTests.swift; sourceTree = "<group>"; };
+		17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAXMLParser.swift; sourceTree = "<group>"; };
+		17C801871ACB468D00E1EB82 /* PDFUAContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAContent.swift; sourceTree = "<group>"; };
 		17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 		17F415531ACAF4C000B3A0DC /* PDFTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTagger.swift; sourceTree = "<group>"; };
 		387452B497149C7463152098 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 				17432C201AC9B6B600AA5859 /* ViewController.swift */,
 				17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */,
 				17432C221AC9B6B600AA5859 /* Document.swift */,
+				17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */,
+				17C801871ACB468D00E1EB82 /* PDFUAContent.swift */,
 				17F415531ACAF4C000B3A0DC /* PDFTagger.swift */,
 				17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */,
 				17432C241AC9B6B600AA5859 /* Images.xcassets */,
@@ -356,11 +364,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
 				17C8017E1ACAFAE300E1EB82 /* ReaderConfig.swift in Sources */,
 				17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */,
 				17432C211AC9B6B600AA5859 /* ViewController.swift in Sources */,
 				17432C1F1AC9B6B600AA5859 /* AppDelegate.swift in Sources */,
 				17F415501ACAEC4E00B3A0DC /* CustomOperators.swift in Sources */,
+				17C801861ACB37B400E1EB82 /* PDFUAXMLParser.swift in Sources */,
 				17432C231AC9B6B600AA5859 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,8 +379,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C8018A1ACBFC7B00E1EB82 /* PDFUAContent.swift in Sources */,
 				17C801831ACB100700E1EB82 /* ReaderConfig.swift in Sources */,
 				17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */,
+				17C801891ACBFC7700E1EB82 /* PDFUAXMLParser.swift in Sources */,
 				17C801841ACB101200E1EB82 /* PDFTagger.swift in Sources */,
 				17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */,
 			);

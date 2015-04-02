@@ -16,6 +16,7 @@ class PDFTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        ReaderConfig.pdfLibraryPath = "/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/"
     }
     
     override func tearDown() {
@@ -24,8 +25,8 @@ class PDFTests: XCTestCase {
     }
     
     func testPDFTaggedSucceeded() {
-        if (NSFileManager.defaultManager().fileExistsAtPath("Users/Niket/Desktop/ReaderFiles")) {
-            NSFileManager.defaultManager().removeItemAtPath("Users/Niket/Desktop/ReaderFiles", error: nil)
+        if (NSFileManager.defaultManager().fileExistsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf")) {
+            NSFileManager.defaultManager().removeItemAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf", error: nil)
         }
         let testPdfFilePath = "/Users/Niket/Desktop/pdfin/KLEE.pdf"
         tagPDF(filePath: testPdfFilePath)
@@ -33,7 +34,17 @@ class PDFTests: XCTestCase {
     }
     
     func testParsePDF() {
-        
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let expectedData = NSFileManager.defaultManager().contentsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/test.xml")
+        let string = NSString(data: parsedData, encoding: 4)
+        let anotherString = NSString(data: expectedData!, encoding: 4)
+        expect(parsedData).to(equal(expectedData))
+    }
+    
+    func testParseXML() {
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let content = PDFUAXMLParser(xmlData: parsedData).parse()
+        expect(content.getTotalNumberOfHeadersAndParagraphs()).to(equal(91))
     }
 
 }

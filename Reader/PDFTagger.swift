@@ -22,9 +22,19 @@ public func tagPDF(#filePath: String) {
     task.waitUntilExit()
 }
 
-public func parsePDF(#filePath: String) {
+/**
+Parses an already tagged PDF and converts it into an XML representation
+
+:param: filePath The file path of the PDF
+
+:returns: An XML representation of the PDF file
+*/
+public func parsePDF(#filePath: String) -> NSData {
     let task = NSTask()
+    let pipe = NSPipe()
+    task.launchPath = "/usr/bin/java"
     task.arguments = ["-jar", "/Users/Niket/projects/pdftagger/out/artifacts/pdftagger_jar2/pdftagger.jar", "-mode", "parse", "-s", filePath]
+    task.standardOutput = pipe
     task.launch()
-    task.waitUntilExit()
+    return pipe.fileHandleForReading.readDataToEndOfFile()
 }
