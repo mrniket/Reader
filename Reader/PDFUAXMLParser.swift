@@ -19,10 +19,10 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
         self.content = PDFUAContent()
         self.parser = NSXMLParser(data: xmlData)
         super.init()
+        self.parser.delegate = self
     }
     
     func parse() -> PDFUAContent {
-        self.parser.delegate = self
         self.parser.parse()
         return content
     }
