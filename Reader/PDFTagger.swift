@@ -38,3 +38,24 @@ public func parsePDF(#filePath: String) -> NSData {
     task.launch()
     return pipe.fileHandleForReading.readDataToEndOfFile()
 }
+
+/**
+Checks if the PDF file at the path given is a tagged PDF
+
+:param: filePath The file path of the PDF
+
+:returns: true if PDF is a tagged pdf, false otherwise
+*/
+public func isTaggedPDF(#filePath: String) -> Bool {
+    let task = NSTask()
+    let pipe = NSPipe()
+    task.launchPath = "/usr/bin/java"
+    task.arguments = ["-jar", "/Users/Niket/projects/pdftagger/out/artifacts/pdftagger_jar2/pdftagger.jar", "-mode", "check", "-s", filePath]
+    task.standardOutput = pipe
+    task.launch()
+    if let result = NSString(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding:NSUTF8StringEncoding) {
+        return result.boolValue
+    } else {
+        return false
+    }
+}

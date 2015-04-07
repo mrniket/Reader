@@ -12,11 +12,21 @@ import Nimble
 import Reader
 
 class PDFTests: XCTestCase {
+    
+    static let testPdfFilePath = "/Users/Niket/Desktop/pdfin/KLEE.pdf"
+    
+    override class func setUp() {
+        super.setUp()
+        ReaderConfig.pdfLibraryPath = "/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/"
+        if (NSFileManager.defaultManager().fileExistsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf")) {
+            NSFileManager.defaultManager().removeItemAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf", error: nil)
+        }
+        tagPDF(filePath: self.testPdfFilePath)
+    }
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        ReaderConfig.pdfLibraryPath = "/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/"
     }
     
     override func tearDown() {
@@ -24,13 +34,10 @@ class PDFTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: PDFTagger Tests
+    
     func testPDFTaggedSucceeded() {
-        if (NSFileManager.defaultManager().fileExistsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf")) {
-            NSFileManager.defaultManager().removeItemAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf", error: nil)
-        }
-        let testPdfFilePath = "/Users/Niket/Desktop/pdfin/KLEE.pdf"
-        tagPDF(filePath: testPdfFilePath)
-        expect(NSFileManager.defaultManager().fileExistsAtPath(ReaderConfig.pdfLibraryPath + testPdfFilePath.lastPathComponent)).to(beTrue())
+        expect(NSFileManager.defaultManager().fileExistsAtPath(ReaderConfig.pdfLibraryPath + PDFTests.testPdfFilePath.lastPathComponent)).to(beTrue())
     }
     
     func testParsePDF() {
@@ -44,7 +51,25 @@ class PDFTests: XCTestCase {
     func testParseXML() {
         let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
-        expect(content.getTotalNumberOfHeadersAndParagraphs()).to(equal(91))
+        expect(content.totalNumberOfHeadersAndParagraphs).to(equal(91))
+    }
+    
+    func testTagCheckPDF() {
+        expect(isTaggedPDF(filePath: PDFTests.testPdfFilePath)).to(beFalse())
+        expect(isTaggedPDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")).to(beTrue())
+    }
+    
+    
+    // MARK: PDFUAContent Tests
+    
+    func testHeaderStructureParsedCorrectly() {
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let content = PDFUAXMLParser(xmlData: parsedData).parse()
+        let tableOfContents = content.tableOfContents
+        expect(tableOfContents.count).to(equal(27))
+        expect(tableOfContents.filter {node in return node.level == 0}.count).to(equal(8))
+        expect(tableOfContents.filter {node in return node.level == 1}.count).to(equal(15))
+        expect(tableOfContents.filter {node in return node.level == 2}.count).to(equal(4))
     }
 
 }

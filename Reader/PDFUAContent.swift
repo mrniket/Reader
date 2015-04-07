@@ -9,13 +9,13 @@
 
 import Swift_Collections
 
-private enum PDFUAContentType {
+enum PDFUAContentType {
     case H
     case P
     case Document
 }
 
-private struct PDFUAContentNode : Hashable {
+struct PDFUAContentNode : Hashable {
     let type: PDFUAContentType
     let level: Int
     let content: String
@@ -26,7 +26,7 @@ private struct PDFUAContentNode : Hashable {
         self.level = level
     }
     
-    //MARK - Hashable
+    //MARK: Hashable
     var hashValue : Int {
         get {
             return content.hashValue
@@ -34,8 +34,8 @@ private struct PDFUAContentNode : Hashable {
     }
 }
 
-// MARK - Equatable
-private func ==(lhs: PDFUAContentNode, rhs: PDFUAContentNode) -> Bool {
+// MARK: - Equatable
+func ==(lhs: PDFUAContentNode, rhs: PDFUAContentNode) -> Bool {
     return (lhs.type == rhs.type) && (lhs.content == rhs.content)
 }
 
@@ -44,19 +44,43 @@ private func ==(lhs: PDFUAContentNode, rhs: PDFUAContentNode) -> Bool {
 */
 public class PDFUAContent {
     
+    // MARK: Public properties
+    
+    var tableOfContents : [PDFUAContentNode] {
+        get {
+            return content.traverse.breadthFirst.filter({
+                (node: PDFUAContentNode) -> Bool in
+                return node.type == PDFUAContentType.H
+            })
+        }
+    }
+    
+    var currentParagraph : PDFUAContentNode? {
+        get {
+            return currentParagraphs[paragraphIndex]
+        }
+    }
+    
+    var currentSection : PDFUAContentNode?
+    
+    var totalNumberOfHeadersAndParagraphs: Int {
+        get {
+            return content.nodes.count
+        }
+    }
+    
+    // MARK: -
+    
     private let rootNode = PDFUAContentNode(type: PDFUAContentType.Document, level: 0, content: "")
     private var content: Tree<PDFUAContentNode>
     private var sectionList: [PDFUAContentNode]
     
-    private lazy var currentSection: PDFUAContentNode = {
-        [unowned self] in
-        return self.content.getChildren(self.rootNode)[0]
-        }()
     
-    private lazy var currentParagraphs: [PDFUAContentNode] = {
-        [unowned self] in
-        self.content.traverse.breadthFirst
-        }()
+    private var currentParagraphs: [PDFUAContentNode] {
+        get {
+            return content.traverse.breadthFirst
+        }
+    }
     
     private var paragraphIndex: Int = 0
     
@@ -74,53 +98,53 @@ public class PDFUAContent {
         return nil
     }
     
-    public func addParagraph(#paragraph: String, forSection section: String?) {
-        if let sect : String = section {
-            if let sectionNode = findSection(sect) {
-                let paragraph = PDFUAContentNode(type: PDFUAContentType.P, level: sectionNode.level, content: paragraph)
-                content.addEdge(sectionNode, child: paragraph)
-            }
+    func addParagraph(#paragraph: String, forSection section: PDFUAContentNode?) -> PDFUAContentNode {
+        let paragraphNode: PDFUAContentNode
+        if let sectionNode = section {
+            paragraphNode = PDFUAContentNode(type: PDFUAContentType.P, level: sectionNode.level, content: paragraph)
+            content.addEdge(sectionNode, child: paragraphNode)
         } else {
-            let paragraph = PDFUAContentNode(type: PDFUAContentType.P, level: 0, content: paragraph)
-            content.addEdge(rootNode, child: paragraph)
+            paragraphNode = PDFUAContentNode(type: PDFUAContentType.P, level: 0, content: paragraph)
+            content.addEdge(rootNode, child: paragraphNode)
         }
-        
+        return paragraphNode
     }
     
-    public func addSection(section: String) {
+    /**
+    Adds the given section name to the top level sections
+    
+    :param: section The name of the section to add
+    */
+    func addSection(section: String) -> PDFUAContentNode {
         let sectionNode = PDFUAContentNode(type: PDFUAContentType.H, level: 0, content: section)
         content.addEdge(rootNode, child: sectionNode)
         sectionList.append(sectionNode)
+        return sectionNode
     }
     
-    public func addSubSection(section: String, parentSection: String) {
-        if let parentNode = findSection(parentSection) {
-            let sectionNode = PDFUAContentNode(type: PDFUAContentType.H, level: parentNode.level, content: section)
+    func addSubSection(section: String, parentSection: PDFUAContentNode?) -> PDFUAContentNode? {
+        if let parentNode = parentSection {
+            let sectionNode = PDFUAContentNode(type: PDFUAContentType.H, level: parentNode.level + 1, content: section)
+            content.addEdge(parentNode, child: sectionNode)
+            return sectionNode
         }
+        return nil
     }
     
-    public func getCurrentParagraph() -> String {
-        return currentParagraphs[paragraphIndex].content
-    }
-    
-    public func getCurrentSection() -> String {
-        return currentSection.content
-    }
-    
-    public func nextParagraph() {
-        if paragraphIndex < self.currentParagraphs.count - 1 {
+    func moveToNextParagraph() {
+        if paragraphIndex < currentParagraphs.count - 1 {
             paragraphIndex++
         }
     }
     
-    public func previousParagraph() {
+    func moveToPreviousParagraph() {
         if paragraphIndex > 0 {
             paragraphIndex--
         }
     }
     
-    public func description() -> String {
-        let children = self.content.getChildren(rootNode)
+    func description() -> String {
+        let children = content.getChildren(rootNode)
         var string: String = ""
         for child in children {
             string += child.content + "\n"
@@ -128,16 +152,11 @@ public class PDFUAContent {
         return string
     }
     
-    func getTotalNumberOfHeadersAndParagraphs() -> Int {
-        return self.content.nodes.count
-    }
-    
     
 }
 
-extension String
-{
+extension String {
     func replace(target: String, withString: String) -> String {
-        return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
 }
