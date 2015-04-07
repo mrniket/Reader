@@ -1,3 +1,26 @@
+PDFUAContent.swift
+	enum PDFUAContentType
+	struct PDFUAContentNode : Hashable
+	let type: PDFUAContentType
+	let level: Int
+	let content: String
+	init(type: PDFUAContentType, level: Int, content: String)
+	var hashValue : Int
+	func ==(lhs: PDFUAContentNode, rhs: PDFUAContentNode) -> Bool
+	var tableOfContents : [PDFUAContentNode]
+	var currentParagraph : PDFUAContentNode?
+	var currentSection : PDFUAContentNode?
+	var totalNumberOfHeadersAndParagraphs: Int
+	init()
+	func addParagraph(#paragraph: String, forSection section: PDFUAContentNode?) -> PDFUAContentNode
+	func addSubSection(section: String, parentSection: PDFUAContentNode?) -> PDFUAContentNode?
+	func moveToNextParagraph()
+	func moveToPreviousParagraph()
+	func description() -> String
+	func replace(target: String, withString: String) -> String
+ReaderConfig.swift
+	struct ReaderConfig
+	static var pdfLibraryPath = "/Users/Niket/Desktop/ReaderFiles/"
 ViewController.swift
 	class ViewController: NSViewController
 	override func viewDidLoad()
@@ -6,6 +29,14 @@ AppDelegate.swift
 	class AppDelegate: NSObject, NSApplicationDelegate
 	func applicationDidFinishLaunching(aNotification: NSNotification)
 	func applicationWillTerminate(aNotification: NSNotification)
+PDFUAXMLParser.swift
+	class PDFUAXMLParser: NSObject, NSXMLParserDelegate
+	init(xmlData: NSData)
+	func parse() -> PDFUAContent
+	func parserDidStartDocument(parser: NSXMLParser)
+	func parserDidEndDocument(parser: NSXMLParser)
+	func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject])
+	func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?)
 Document.swift
 	class Document: NSDocument
 	override init()
