@@ -67,9 +67,9 @@ class PDFTests: XCTestCase {
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
         let tableOfContents = content.tableOfContents
         expect(tableOfContents.count).to(equal(27))
-        expect(tableOfContents.filter {node in return node.level == 0}.count).to(equal(8))
-        expect(tableOfContents.filter {node in return node.level == 1}.count).to(equal(15))
-        expect(tableOfContents.filter {node in return node.level == 2}.count).to(equal(4))
+        expect(tableOfContents.filter {$0.level == 0}.count).to(equal(8))
+        expect(tableOfContents.filter {$0.level == 1}.count).to(equal(15))
+        expect(tableOfContents.filter {$0.level == 2}.count).to(equal(4))
     }
 
 }
