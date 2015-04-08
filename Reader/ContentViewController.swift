@@ -8,7 +8,18 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ContentViewController: NSViewController {
+    
+    // MARK: Properties
+    
+    weak var document: PDFDocument?
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var sectionField: NSTextField!
+    
+    
+    // MARK: Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
