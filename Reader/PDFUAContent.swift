@@ -46,46 +46,24 @@ public class PDFUAContent {
     
     // MARK: Public properties
     
-    var tableOfContents : [PDFUAContentNode] {
-        get {
-            return content.traverse.breadthFirst.filter({
-                (node: PDFUAContentNode) -> Bool in
-                return node.type == PDFUAContentType.H
-            })
-        }
-    }
-    
-    var currentParagraph : PDFUAContentNode? {
-        get {
-            return currentParagraphs[paragraphIndex]
-        }
-    }
-    
-    var currentSection : PDFUAContentNode?
-    
-    var totalNumberOfHeadersAndParagraphs: Int {
-        get {
-            return content.nodes.count
-        }
-    }
+    var tree: Tree<PDFUAContentNode>
     
     // MARK: -
     
     private let rootNode = PDFUAContentNode(type: PDFUAContentType.Document, level: 0, content: "")
-    private var content: Tree<PDFUAContentNode>
     private var sectionList: [PDFUAContentNode]
     
     
     private var currentParagraphs: [PDFUAContentNode] {
         get {
-            return content.traverse.breadthFirst
+            return tree.traverse.breadthFirst
         }
     }
     
     private var paragraphIndex: Int = 0
     
     init() {
-        self.content = Tree<PDFUAContentNode>()
+        self.tree = Tree<PDFUAContentNode>()
         self.sectionList = []
     }
     
@@ -98,14 +76,22 @@ public class PDFUAContent {
         return nil
     }
     
+    /**
+    Adds a paragraph to the the given section
+    
+    :param: paragraph The paragraph to add
+    :param: section   The section to add the paragraph too
+    
+    :returns: The new paragraph node created
+    */
     func addParagraph(#paragraph: String, forSection section: PDFUAContentNode?) -> PDFUAContentNode {
         let paragraphNode: PDFUAContentNode
         if let sectionNode = section {
             paragraphNode = PDFUAContentNode(type: PDFUAContentType.P, level: sectionNode.level, content: paragraph)
-            content.addEdge(sectionNode, child: paragraphNode)
+            tree.addEdge(sectionNode, child: paragraphNode)
         } else {
             paragraphNode = PDFUAContentNode(type: PDFUAContentType.P, level: 0, content: paragraph)
-            content.addEdge(rootNode, child: paragraphNode)
+            tree.addEdge(rootNode, child: paragraphNode)
         }
         return paragraphNode
     }
@@ -117,7 +103,7 @@ public class PDFUAContent {
     */
     func addSection(section: String) -> PDFUAContentNode {
         let sectionNode = PDFUAContentNode(type: PDFUAContentType.H, level: 0, content: section)
-        content.addEdge(rootNode, child: sectionNode)
+        tree.addEdge(rootNode, child: sectionNode)
         sectionList.append(sectionNode)
         return sectionNode
     }
@@ -125,7 +111,7 @@ public class PDFUAContent {
     func addSubSection(section: String, parentSection: PDFUAContentNode?) -> PDFUAContentNode? {
         if let parentNode = parentSection {
             let sectionNode = PDFUAContentNode(type: PDFUAContentType.H, level: parentNode.level + 1, content: section)
-            content.addEdge(parentNode, child: sectionNode)
+            tree.addEdge(parentNode, child: sectionNode)
             return sectionNode
         }
         return nil
@@ -144,7 +130,7 @@ public class PDFUAContent {
     }
     
     func description() -> String {
-        let children = content.getChildren(rootNode)
+        let children = tree.getChildren(rootNode)
         var string: String = ""
         for child in children {
             string += child.content + "\n"
