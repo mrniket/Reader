@@ -16,6 +16,7 @@
 		17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C331AC9B6B600AA5859 /* ReaderTests.swift */; };
 		17900C311AD4377600054526 /* ReaderWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17900C301AD4377600054526 /* ReaderWindowController.swift */; };
 		17900C341AD561A900054526 /* ContentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17900C331AD561A900054526 /* ContentInteractor.swift */; };
+		17900C351AD5730B00054526 /* ContentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17900C331AD561A900054526 /* ContentInteractor.swift */; };
 		17C8017E1ACAFAE300E1EB82 /* ReaderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */; };
 		17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017F1ACB028600E1EB82 /* PDFTests.swift */; };
 		17C801831ACB100700E1EB82 /* ReaderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */; };
@@ -400,6 +401,7 @@
 				17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */,
 				17C801891ACBFC7700E1EB82 /* PDFUAXMLParser.swift in Sources */,
 				17C801841ACB101200E1EB82 /* PDFTagger.swift in Sources */,
+				17900C351AD5730B00054526 /* ContentInteractor.swift in Sources */,
 				17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

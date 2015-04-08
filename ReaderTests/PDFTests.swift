@@ -51,7 +51,8 @@ class PDFTests: XCTestCase {
     func testParseXML() {
         let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
-        expect(content.totalNumberOfHeadersAndParagraphs).to(equal(91))
+        let contentInteractor = ContentInteractor(content: content)
+        expect(contentInteractor.totalNumberOfHeadersAndParagraphs).to(equal(91))
     }
     
     func testTagCheckPDF() {
@@ -65,7 +66,8 @@ class PDFTests: XCTestCase {
     func testHeaderStructureParsedCorrectly() {
         let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
-        let tableOfContents = content.tableOfContents
+        let contentInteractor = ContentInteractor(content: content)
+        let tableOfContents = contentInteractor.tableOfContents
         expect(tableOfContents.count).to(equal(27))
         expect(tableOfContents.filter {$0.level == 0}.count).to(equal(8))
         expect(tableOfContents.filter {$0.level == 1}.count).to(equal(15))

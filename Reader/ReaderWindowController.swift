@@ -20,7 +20,7 @@ class ReaderWindowController: NSWindowController {
     
     override var document: AnyObject? {
         didSet {
-            let readerViewController = window!.contentViewController as! ReaderViewController
+            let readerViewController = window!.contentViewController as! ContentViewController
             readerViewController.document = document as? PDFDocument
         }
     }
