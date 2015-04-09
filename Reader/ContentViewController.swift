@@ -8,31 +8,63 @@
 
 import Cocoa
 
-class ContentViewController: NSViewController {
+class ViewController: NSViewController, ContentPresenterDelegate {
     
-    // MARK: Properties
-    
-    weak var document: PDFDocument?
-    
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var sectionField: NSTextField!
+    @IBOutlet var paragraphView: ContentTextView!
     
     
-    // MARK: Overrides
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: AnyObject? {
+    // MARK: - Properties
+    
+    weak var document: Document? {
         didSet {
-        // Update the view, if already loaded.
+            if document == nil { return }
+            
+            let contentPresenter = ContentPresenter()
+            contentPresenter.delegate = self
+            
+            document!.content?.presenter = contentPresenter
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        let contentView = view as! ContentView
+        contentView.delegate = self
+		
+    }
+    
+    override var representedObject: AnyObject? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+    
+    // MARK: ContentPresenterDelegate
+    
+    func paragraphChanged(paragraphText: String) {
+        paragraphView.string = paragraphText
+    }
+    
+    func sectionChanged(sectionText: String) {
+        sectionField.stringValue = sectionText
+    }
+    
+}
 
-
+extension ViewController: ContentViewDelegate {
+ 
+    func leftArrowKeyPressed() {
+        document?.content?.moveToPreviousParagraph()
+    }
+    
+    func rightArrowKeyPressed() {
+        document?.content?.moveToNextParagraph()
+    }
+    
 }
 
