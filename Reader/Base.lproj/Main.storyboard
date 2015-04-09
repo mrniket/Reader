@@ -673,20 +673,20 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-c9-G0C">
-                                <rect key="frame" x="185" y="228" width="110" height="22"/>
+                                <rect key="frame" x="18" y="228" width="444" height="22"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Section Title" id="Cc7-nU-5Mv">
-                                    <font key="font" metaFont="system" size="18"/>
+                                    <font key="font" size="18" name="Menlo-Regular"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rus-wR-1jK">
                                 <rect key="frame" x="20" y="20" width="440" height="200"/>
-                                <clipView key="contentView" copiesOnScroll="NO" id="OYC-Y5-ZT2">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="OYC-Y5-ZT2">
                                     <rect key="frame" x="1" y="1" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="IyL-3r-oAC">
+                                        <textView editable="NO" importsGraphics="NO" horizontallyResizable="YES" selectionGranularity="word" findStyle="panel" verticallyResizable="YES" dashSubstitution="YES" id="IyL-3r-oAC" customClass="ContentTextView" customModule="Reader" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="0.9647059440612793" green="0.95294123888015747" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
@@ -712,6 +712,8 @@
                         <constraints>
                             <constraint firstItem="TyV-c9-G0C" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="20" id="2jG-fq-a69"/>
                             <constraint firstItem="Rus-wR-1jK" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="20" id="50o-7B-WDz"/>
+                            <constraint firstAttribute="trailing" secondItem="TyV-c9-G0C" secondAttribute="trailing" constant="20" id="B2h-TB-IdZ"/>
+                            <constraint firstItem="TyV-c9-G0C" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="20" id="Cgn-hX-AXN"/>
                             <constraint firstAttribute="centerX" secondItem="TyV-c9-G0C" secondAttribute="centerX" id="Nb6-7y-mUP"/>
                             <constraint firstAttribute="bottom" secondItem="Rus-wR-1jK" secondAttribute="bottom" constant="20" id="aT2-Cc-bYc"/>
                             <constraint firstAttribute="trailing" secondItem="Rus-wR-1jK" secondAttribute="trailing" constant="20" id="cfQ-a1-jDW"/>

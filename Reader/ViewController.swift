@@ -13,7 +13,7 @@ class ViewController: NSViewController, ContentPresenterDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var sectionField: NSTextField!
-    @IBOutlet var paragraphView: NSTextView!
+    @IBOutlet var paragraphView: ContentTextView!
     
     
     // MARK: - Properties
@@ -35,6 +35,7 @@ class ViewController: NSViewController, ContentPresenterDelegate {
         // Do any additional setup after loading the view.
         let contentView = view as! ContentView
         contentView.delegate = self
+		
     }
     
     override var representedObject: AnyObject? {

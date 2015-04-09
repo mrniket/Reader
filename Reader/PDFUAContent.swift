@@ -205,7 +205,6 @@ public class PDFUAContent {
 			if currentSection != content.getParent(currentParagraphNode) {
 				currentSection = content.getParent(currentParagraphNode)
 				if let currentSectionNode = currentSection {
-					println("got here")
 					presenter?.changeSection(section: currentSectionNode)
 				}
 			}
