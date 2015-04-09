@@ -47,6 +47,7 @@ public class PDFUAContent {
     
     var presenter: ContentPresenterType? {
         didSet {
+			initParagraphAndSection()
             updateSection()
             updateParagraph()
         }
@@ -61,11 +62,7 @@ public class PDFUAContent {
         }
     }
     
-    var currentParagraph : PDFUAContentNode? {
-        get {
-            return currentParagraphs[paragraphIndex]
-        }
-    }
+    var currentParagraph : PDFUAContentNode?
     
     var currentSection : PDFUAContentNode?
     
@@ -79,20 +76,21 @@ public class PDFUAContent {
     
     private let rootNode = PDFUAContentNode(type: PDFUAContentType.Document, level: 0, content: "")
     private var content: Tree<PDFUAContentNode>
-    private var sectionList: [PDFUAContentNode]
-    
-    
-    private var currentParagraphs: [PDFUAContentNode] {
-        get {
-            return content.traverse.breadthFirst
-        }
-    }
-    
+	private var sectionList: [PDFUAContentNode]
+	private var contentList: [PDFUAContentNode] {
+		get {
+			return content.traverse.breadthFirst
+		}
+	}
+	private var contentListIndex: Int
+
+	
     private var paragraphIndex: Int = 0
     
     init() {
         self.content = Tree<PDFUAContentNode>()
-        self.sectionList = []
+		self.sectionList = []
+		self.contentListIndex = 0
     }
     
     private func findSection(sectionName: String) -> PDFUAContentNode? {
@@ -103,6 +101,22 @@ public class PDFUAContent {
         }
         return nil
     }
+	
+	private func initParagraphAndSection() {
+		currentParagraph = nil
+		currentSection = nil
+		contentListIndex = -1
+		moveToNextParagraph()
+	}
+	
+	private func findFirstSection() -> PDFUAContentNode? {
+		for node in contentList {
+			if node.type == PDFUAContentType.H {
+				return node
+			}
+		}
+		return nil
+	}
     
     func addParagraph(#paragraph: String, forSection section: PDFUAContentNode?) -> PDFUAContentNode {
         let paragraphNode: PDFUAContentNode
@@ -113,6 +127,9 @@ public class PDFUAContent {
             paragraphNode = PDFUAContentNode(type: PDFUAContentType.P, level: 0, content: paragraph)
             content.addEdge(rootNode, child: paragraphNode)
         }
+		if currentParagraph == nil {
+			initParagraphAndSection()
+		}
         return paragraphNode
     }
     
@@ -138,16 +155,24 @@ public class PDFUAContent {
     }
     
     func moveToNextParagraph() {
-        if paragraphIndex < currentParagraphs.count - 1 {
-            paragraphIndex++
-        }
+        // TODO: move to next paragraph
+		if contentListIndex < contentList.count {
+			contentListIndex++
+			let nextNode = contentList[contentListIndex]
+			if nextNode.type != PDFUAContentType.P {
+				if nextNode.type == PDFUAContentType.H {
+					currentSection = nextNode
+				}
+				moveToNextParagraph()
+			} else {
+				currentParagraph = nextNode
+			}
+		}
         updateParagraph()
     }
     
     func moveToPreviousParagraph() {
-        if paragraphIndex > 0 {
-            paragraphIndex--
-        }
+        // TODO: move to previous paragraph
         updateSection()
     }
     

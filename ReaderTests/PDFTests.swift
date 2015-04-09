@@ -71,5 +71,12 @@ class PDFTests: XCTestCase {
         expect(tableOfContents.filter {$0.level == 1}.count).to(equal(15))
         expect(tableOfContents.filter {$0.level == 2}.count).to(equal(4))
     }
+    
+    func testInitialCurrentParagraphAndSection() {
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let content = PDFUAXMLParser(xmlData: parsedData).parse()
+        expect(content.currentParagraph?.content).to(beginWith("Many classes of errors, such as functional correctness bugs, are difficult to find without executing a piece of code."))
+        expect(content.currentSection?.content).to(equal("Introduction"))
+    }
 
 }
