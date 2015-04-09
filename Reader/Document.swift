@@ -9,6 +9,8 @@
 import Cocoa
 
 class Document: NSDocument {
+    
+    var contentPresenter: ContentPresenterType?
 
     override init() {
         super.init()
@@ -37,15 +39,16 @@ class Document: NSDocument {
         outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
         return nil
     }
-
-    override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
-        // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
-        // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return false
+    
+    override func readFromURL(url: NSURL, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
+        {
+            tagPDF(filePath: url.absoluteString!)
+        } ~> {
+            let data = parsePDF(filePath: ReaderConfig.pdfLibraryPath + url.lastPathComponent!)
+            let content = PDFUAXMLParser(xmlData: data).parse()
+        }
+        return true
     }
-
 
 }
 

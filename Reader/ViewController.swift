@@ -8,7 +8,20 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, ContentPresenterDelegate {
+    
+    // MARK: Properties
+    
+    weak var document: Document? {
+        didSet {
+            if document == nil { return }
+            
+            let contentPresenter = ContentPresenter()
+            contentPresenter.delegate = self
+            
+            document!.contentPresenter = contentPresenter
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
