@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		036696B48CA2554B84B67CA0 /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4A088F3BF0A608C3D11288 /* Pods_Reader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		17432C1F1AC9B6B600AA5859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */; };
-		17432C211AC9B6B600AA5859 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C201AC9B6B600AA5859 /* ViewController.swift */; };
 		17432C231AC9B6B600AA5859 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C221AC9B6B600AA5859 /* Document.swift */; };
 		17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17432C241AC9B6B600AA5859 /* Images.xcassets */; };
 		17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17432C261AC9B6B600AA5859 /* Main.storyboard */; };
 		17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C331AC9B6B600AA5859 /* ReaderTests.swift */; };
+		17AB59751AD737520053B5F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB59741AD737520053B5F4 /* ViewController.swift */; };
 		17C497791AD6A87100AE6969 /* ContentPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C497781AD6A87100AE6969 /* ContentPresenterType.swift */; };
 		17C4977B1AD6A8C600AE6969 /* ContentPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4977A1AD6A8C600AE6969 /* ContentPresenterDelegate.swift */; };
 		17C4977D1AD6B73000AE6969 /* ContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4977C1AD6B73000AE6969 /* ContentPresenter.swift */; };
@@ -52,13 +52,13 @@
 		17432C191AC9B6B600AA5859 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17432C1D1AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17432C201AC9B6B600AA5859 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17432C221AC9B6B600AA5859 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		17432C241AC9B6B600AA5859 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17432C271AC9B6B600AA5859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17432C2D1AC9B6B600AA5859 /* ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17432C321AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C331AC9B6B600AA5859 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
+		17AB59741AD737520053B5F4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17C497781AD6A87100AE6969 /* ContentPresenterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenterType.swift; sourceTree = "<group>"; };
 		17C4977A1AD6A8C600AE6969 /* ContentPresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenterDelegate.swift; sourceTree = "<group>"; };
 		17C4977C1AD6B73000AE6969 /* ContentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenter.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		17C4977F1AD6B98800AE6969 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				17432C201AC9B6B600AA5859 /* ViewController.swift */,
+				17AB59741AD737520053B5F4 /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */,
 				17C8017E1ACAFAE300E1EB82 /* ReaderConfig.swift in Sources */,
 				17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */,
-				17432C211AC9B6B600AA5859 /* ViewController.swift in Sources */,
+				17AB59751AD737520053B5F4 /* ViewController.swift in Sources */,
 				17C497791AD6A87100AE6969 /* ContentPresenterType.swift in Sources */,
 				17C4977D1AD6B73000AE6969 /* ContentPresenter.swift in Sources */,
 				17C497891AD734F800AE6969 /* ContentTextView.swift in Sources */,
