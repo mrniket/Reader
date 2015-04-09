@@ -10,7 +10,13 @@ import Cocoa
 
 class ViewController: NSViewController, ContentPresenterDelegate {
     
-    // MARK: Properties
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var sectionField: NSTextField!
+    @IBOutlet weak var paragraphView: NSTextView!
+
+    
+    // MARK: - Properties
     
     weak var document: Document? {
         didSet {
