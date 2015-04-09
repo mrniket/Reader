@@ -13,8 +13,8 @@ class ViewController: NSViewController, ContentPresenterDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var sectionField: NSTextField!
-    @IBOutlet weak var paragraphView: NSTextView!
-
+    @IBOutlet var paragraphView: NSTextView!
+    
     
     // MARK: - Properties
     
@@ -25,22 +25,45 @@ class ViewController: NSViewController, ContentPresenterDelegate {
             let contentPresenter = ContentPresenter()
             contentPresenter.delegate = self
             
-            document!.contentPresenter = contentPresenter
+            document!.content?.presenter = contentPresenter
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        let contentView = view as! ContentView
+        contentView.delegate = self
     }
-
+    
     override var representedObject: AnyObject? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
+    
+    // MARK: ContentPresenterDelegate
+    
+    func paragraphChanged(paragraphText: String) {
+        paragraphView.string = paragraphText
+    }
+    
+    func sectionChanged(sectionText: String) {
+        sectionField.stringValue = sectionText
+    }
+    
+}
 
-
+extension ViewController: ContentViewDelegate {
+ 
+    func leftArrowKeyPressed() {
+        document?.content?.moveToPreviousParagraph()
+    }
+    
+    func rightArrowKeyPressed() {
+        document?.content?.moveToNextParagraph()
+    }
+    
 }
 

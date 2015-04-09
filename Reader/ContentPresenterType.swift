@@ -12,6 +12,9 @@ protocol ContentPresenterType: class {
     
     weak var delegate: ContentPresenterDelegate? { get set }
     
+    // MARK: Methods
     
+    func changeParagraph(#paragraph: PDFUAContentNode)
+    func changeSection(#section: PDFUAContentNode)
     
 }

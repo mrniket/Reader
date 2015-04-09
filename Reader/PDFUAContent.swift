@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Niket Shah. All rights reserved.
 //
 
-
 import Swift_Collections
 
 enum PDFUAContentType {
@@ -45,6 +44,13 @@ func ==(lhs: PDFUAContentNode, rhs: PDFUAContentNode) -> Bool {
 public class PDFUAContent {
     
     // MARK: Public properties
+    
+    var presenter: ContentPresenterType? {
+        didSet {
+            updateSection()
+            updateParagraph()
+        }
+    }
     
     var tableOfContents : [PDFUAContentNode] {
         get {
@@ -135,12 +141,14 @@ public class PDFUAContent {
         if paragraphIndex < currentParagraphs.count - 1 {
             paragraphIndex++
         }
+        updateParagraph()
     }
     
     func moveToPreviousParagraph() {
         if paragraphIndex > 0 {
             paragraphIndex--
         }
+        updateSection()
     }
     
     func description() -> String {
@@ -152,7 +160,19 @@ public class PDFUAContent {
         return string
     }
     
+    // MARK: - Helper Methods
     
+    func updateParagraph() {
+        if let currentParagraphNode = currentParagraph {
+            presenter?.changeParagraph(paragraph: currentParagraphNode)
+        }
+    }
+    
+    func updateSection() {
+        if let currentSectionNode = currentSection {
+            presenter?.changeParagraph(paragraph: currentSectionNode)
+        }
+    }
 }
 
 extension String {

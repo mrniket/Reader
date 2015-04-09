@@ -10,7 +10,7 @@ import Cocoa
 
 class Document: NSDocument {
     
-    var contentPresenter: ContentPresenterType?
+    var content: PDFUAContent?
 
     override init() {
         super.init()
@@ -41,12 +41,14 @@ class Document: NSDocument {
     }
     
     override func readFromURL(url: NSURL, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        {
-            tagPDF(filePath: url.absoluteString!)
-        } ~> {
-            let data = parsePDF(filePath: ReaderConfig.pdfLibraryPath + url.lastPathComponent!)
-            let content = PDFUAXMLParser(xmlData: data).parse()
+//        {
+        if !isTaggedPDF(filePath: url.path!) {
+            tagPDF(filePath: url.path!)
         }
+//        } ~> {
+            let data = parsePDF(filePath: ReaderConfig.pdfLibraryPath + url.lastPathComponent!)
+            self.content = PDFUAXMLParser(xmlData: data).parse()
+//        }
         return true
     }
 

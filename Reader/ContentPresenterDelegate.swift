@@ -8,4 +8,7 @@
 
 protocol ContentPresenterDelegate: class {
     
+    func paragraphChanged(paragraphText: String)
+    func sectionChanged(sectionText: String)
+    
 }
