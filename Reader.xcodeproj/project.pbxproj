@@ -17,6 +17,7 @@
 		17C497791AD6A87100AE6969 /* ContentPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C497781AD6A87100AE6969 /* ContentPresenterType.swift */; };
 		17C4977B1AD6A8C600AE6969 /* ContentPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4977A1AD6A8C600AE6969 /* ContentPresenterDelegate.swift */; };
 		17C4977D1AD6B73000AE6969 /* ContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4977C1AD6B73000AE6969 /* ContentPresenter.swift */; };
+		17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C497801AD6B9C800AE6969 /* WindowController.swift */; };
 		17C8017E1ACAFAE300E1EB82 /* ReaderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */; };
 		17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017F1ACB028600E1EB82 /* PDFTests.swift */; };
 		17C801831ACB100700E1EB82 /* ReaderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */; };
@@ -56,6 +57,7 @@
 		17C497781AD6A87100AE6969 /* ContentPresenterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenterType.swift; sourceTree = "<group>"; };
 		17C4977A1AD6A8C600AE6969 /* ContentPresenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenterDelegate.swift; sourceTree = "<group>"; };
 		17C4977C1AD6B73000AE6969 /* ContentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPresenter.swift; sourceTree = "<group>"; };
+		17C497801AD6B9C800AE6969 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderConfig.swift; sourceTree = "<group>"; };
 		17C8017F1ACB028600E1EB82 /* PDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTests.swift; sourceTree = "<group>"; };
 		17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAXMLParser.swift; sourceTree = "<group>"; };
@@ -111,9 +113,10 @@
 		17432C1B1AC9B6B600AA5859 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				17C4977F1AD6B98800AE6969 /* ViewControllers */,
+				17C4977E1AD6B97F00AE6969 /* WindowControllers */,
 				17C497771AD6A85100AE6969 /* Presenters */,
 				17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */,
-				17432C201AC9B6B600AA5859 /* ViewController.swift */,
 				17C8017D1ACAFAE300E1EB82 /* ReaderConfig.swift */,
 				17432C221AC9B6B600AA5859 /* Document.swift */,
 				17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */,
@@ -161,6 +164,22 @@
 				17C4977C1AD6B73000AE6969 /* ContentPresenter.swift */,
 			);
 			name = Presenters;
+			sourceTree = "<group>";
+		};
+		17C4977E1AD6B97F00AE6969 /* WindowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17C497801AD6B9C800AE6969 /* WindowController.swift */,
+			);
+			name = WindowControllers;
+			sourceTree = "<group>";
+		};
+		17C4977F1AD6B98800AE6969 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17432C201AC9B6B600AA5859 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		6D463E7BDA3577D69D2C5C07 /* Frameworks */ = {
@@ -382,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
+				17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */,
 				17C8017E1ACAFAE300E1EB82 /* ReaderConfig.swift in Sources */,
 				17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */,
 				17432C211AC9B6B600AA5859 /* ViewController.swift in Sources */,
