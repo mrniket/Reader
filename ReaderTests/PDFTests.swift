@@ -51,7 +51,7 @@ class PDFTests: XCTestCase {
     func testParseXML() {
         let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
-        expect(content.totalNumberOfHeadersAndParagraphs).to(equal(91))
+        expect(content.totalNumberOfHeadersAndParagraphs).to(equal(96))
     }
     
     func testTagCheckPDF() {
