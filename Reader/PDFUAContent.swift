@@ -156,7 +156,7 @@ public class PDFUAContent {
 	
 	func moveToNextParagraph() {
 		// TODO: move to next paragraph
-		if contentListIndex < contentList.count {
+		if contentListIndex < contentList.count - 1 {
 			contentListIndex++
 			let nextNode = contentList[contentListIndex]
 			if nextNode.type != PDFUAContentType.P {
