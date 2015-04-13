@@ -14,7 +14,7 @@ class WindowController: NSWindowController {
     
     override var document: AnyObject? {
         didSet {
-            let contentViewController = window!.contentViewController as! ViewController
+            let contentViewController = window!.contentViewController as! ContentViewController
             
             contentViewController.document = document as? Document
         }
