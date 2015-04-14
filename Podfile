@@ -1,16 +1,17 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '6.0'
+platform :osx, '10.10'
 
 link_with 'Reader'
 
 target 'Reader' do
 	use_frameworks!
-	pod 'Swift-Collections', :git => 'https://github.com/jbulat/Swift-Collections'
+	pod 'Swift-Collections', :git => 'https://github.com/mrniket/Swift-Collections'
 	pod 'MendeleyKit', :git => 'https://github.com/Mendeley/mendeleykit.git'
 end
 
 target 'ReaderTests' do
 	use_frameworks!
-	pod 'Swift-Collections', :git => 'https://github.com/jbulat/Swift-Collections'
+	pod 'Swift-Collections', :git => 'https://github.com/mrniket/Swift-Collections'
 	pod 'Nimble', '~> 0.4.0'
+	pod 'MendeleyKit', :git => 'https://github.com/Mendeley/mendeleykit.git'
 end
