@@ -13,6 +13,7 @@
 		17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17432C241AC9B6B600AA5859 /* Images.xcassets */; };
 		17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17432C261AC9B6B600AA5859 /* Main.storyboard */; };
 		17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C331AC9B6B600AA5859 /* ReaderTests.swift */; };
+		175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */; };
 		17AB59751AD737520053B5F4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB59741AD737520053B5F4 /* ContentViewController.swift */; };
 		17BE96EF1ADC01E900F80A4D /* AuthenticatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */; };
 		17BE96F11ADC02C600F80A4D /* MendeleyAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE96F01ADC02C600F80A4D /* MendeleyAuthenticator.swift */; };
@@ -60,6 +61,7 @@
 		17432C2D1AC9B6B600AA5859 /* ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17432C321AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C331AC9B6B600AA5859 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
+		175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountsViewController.swift; sourceTree = "<group>"; };
 		17AB59741AD737520053B5F4 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorType.swift; sourceTree = "<group>"; };
 		17BE96F01ADC02C600F80A4D /* MendeleyAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MendeleyAuthenticator.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				17AB59741AD737520053B5F4 /* ContentViewController.swift */,
+				175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
+				175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */,
 				17BE96EF1ADC01E900F80A4D /* AuthenticatorType.swift in Sources */,
 				17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */,
 				17C8017E1ACAFAE300E1EB82 /* Configuration.swift in Sources */,

@@ -22,10 +22,10 @@ class MendeleyAuthenticator: AuthenticatorType {
 	}
 	
 	func getLoginWindowController() -> NSWindowController {
-		var loginViewController: MendeleyLoginWindowController? = nil
-		loginViewController =  MendeleyLoginWindowController(clientKey: MendeleyConfig.clientID, clientSecret: MendeleyConfig.secret, redirectURI: MendeleyConfig.redirectURL, completionBlock: { (sucess, error) -> Void in
+		var loginWindowController: MendeleyLoginWindowController? = nil
+		loginWindowController =  MendeleyLoginWindowController(clientKey: MendeleyConfig.clientID, clientSecret: MendeleyConfig.secret, redirectURI: MendeleyConfig.redirectURL, completionBlock: { (sucess, error) -> Void in
 			//                self.window?.endSheet(self.loginController!.window!)
-			loginViewController!.window!.sheetParent?.endSheet(loginViewController!.window!)
+			loginWindowController!.window!.sheetParent?.endSheet(loginWindowController!.window!)
 //			NSApp.endSheet(loginViewController!.window!)
 			println("authenticated via login")
 			println(sucess)
@@ -33,7 +33,7 @@ class MendeleyAuthenticator: AuthenticatorType {
 				println(error)
 			}
 		})
-		return loginViewController!
+		return loginWindowController!
 	}
 	
 	func clearAuthentication() {

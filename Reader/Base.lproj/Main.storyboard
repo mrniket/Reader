@@ -95,17 +95,20 @@
         <!--User Accounts-->
         <scene sceneID="4jY-vD-NPK">
             <objects>
-                <viewController title="User Accounts" id="Rtn-Ir-Opx" sceneMemberID="viewController">
+                <viewController title="User Accounts" id="Rtn-Ir-Opx" customClass="UserAccountsViewController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dwD-8S-B39">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-c8-xCm">
-                                <rect key="frame" x="158" y="137" width="136" height="25"/>
-                                <buttonCell key="cell" type="roundTextured" title="Sign in to Mendeley" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SyD-WT-2rN">
+                                <rect key="frame" x="161" y="137" width="129" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="Sign in to Mendley" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SyD-WT-2rN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="buttonClicked:" target="Rtn-Ir-Opx" id="Cws-1x-uHs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -113,6 +116,9 @@
                             <constraint firstAttribute="centerX" secondItem="BCf-c8-xCm" secondAttribute="centerX" constant="-0.5" id="gOU-Nw-egG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="BCf-c8-xCm" id="5xh-1v-umE"/>
+                    </connections>
                 </viewController>
                 <customObject id="aRa-PH-wi0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
