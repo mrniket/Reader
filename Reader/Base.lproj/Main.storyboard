@@ -4,6 +4,120 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
     </dependencies>
     <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Xlk-9S-lpa">
+            <objects>
+                <windowController id="pDK-aM-M7w" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="kHm-aD-K6h">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="66" y="1213" width="480" height="270"/>
+                        <rect key="screenRect" x="-228" y="900" width="1920" height="1057"/>
+                    </window>
+                    <connections>
+                        <segue destination="MUs-N0-4uy" kind="relationship" relationship="window.shadowedContentViewController" id="9dm-5s-t5F"/>
+                    </connections>
+                </windowController>
+                <customObject id="xFp-Ll-2wH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="262"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="5DP-nV-VZQ">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" id="MUs-N0-4uy" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="LTx-JH-tUV"/>
+                        <tabViewItem identifier="" id="QbT-Ag-rIF"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="Bqm-4Z-nqh">
+                        <rect key="frame" x="0.0" y="5" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="625-z0-ieR" kind="relationship" relationship="tabItems" id="c6G-nz-lbr"/>
+                        <segue destination="Rtn-Ir-Opx" kind="relationship" relationship="tabItems" id="rs3-sZ-iFg"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="UOA-xR-PLl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="258"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="dsX-aC-YG7">
+            <objects>
+                <viewController title="General" id="625-z0-ieR" sceneMemberID="viewController">
+                    <view key="view" id="zad-Dg-I1A">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-oD-y4p">
+                                <rect key="frame" x="18" y="254" width="166" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Library File Path" id="MhO-Eu-t2Q">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fK9-sZ-Cag">
+                                <rect key="frame" x="18" y="229" width="166" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="PDFTagger location" id="6mg-ZG-GdS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RK-yO-lVg">
+                                <rect key="frame" x="18" y="204" width="166" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Grobid home location" id="9mb-Dr-8fg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Um6-Qm-VmZ">
+                                <rect key="frame" x="18" y="179" width="166" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Grobid properties location" id="tRv-Wn-1BD">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="9Oz-Ns-qWj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="77"/>
+        </scene>
+        <!--User Accounts-->
+        <scene sceneID="4jY-vD-NPK">
+            <objects>
+                <viewController title="User Accounts" id="Rtn-Ir-Opx" sceneMemberID="viewController">
+                    <view key="view" id="dwD-8S-B39">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-c8-xCm">
+                                <rect key="frame" x="158" y="137" width="136" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="Sign in to Mendeley" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SyD-WT-2rN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BCf-c8-xCm" secondAttribute="centerY" id="frY-WE-1Bc"/>
+                            <constraint firstAttribute="centerX" secondItem="BCf-c8-xCm" secondAttribute="centerX" constant="-0.5" id="gOU-Nw-egG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="aRa-PH-wi0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="439"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -21,7 +135,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="pDK-aM-M7w" kind="modal" id="TKp-re-21Z"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
