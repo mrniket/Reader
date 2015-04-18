@@ -13,6 +13,7 @@ class UserAccountsViewController: NSViewController {
 	// MARK: Properties
 	
 	let authenticator: AuthenticatorType = MendeleyAuthenticator()
+	var loginViewController: NSWindowController?
 	
 	// MARK: IBOutlets
 	
@@ -31,10 +32,12 @@ class UserAccountsViewController: NSViewController {
 	@IBAction func buttonClicked(sender: NSButton) {
 		if authenticator.isAuthenticated() {
 			authenticator.clearAuthentication()
+			setSignInButtonText()
 		} else {
 			let loginViewController = authenticator.getLoginWindowController()
 			self.view.window!.beginSheet(loginViewController.window!, completionHandler: { (response: NSModalResponse) -> Void in
-				println("ended")
+				self.setSignInButtonText()
+				self.loginViewController = nil
 			})
 		}
 	}
