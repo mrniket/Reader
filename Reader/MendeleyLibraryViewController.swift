@@ -54,7 +54,7 @@ extension MendeleyLibraryViewController {
 				case "docid":
 					return file.document_id
 				case "id":
-					return file.catalog_id
+					return file.object_ID
 				default:
 					return "What is this?"
 			}
@@ -70,10 +70,11 @@ extension MendeleyLibraryViewController: MendeleyDocumentProviderDelegate {
 		println("got here")
 		self.files = files
 		tableView.reloadData()
+		dataProvider?.downloadDocument("1913086d-034c-a833-3a5d-ae4ce4ed741d")
 	}
 	
 	func downloadedDocument(id: String) {
-		
+		println(dataProvider?.applicationSupportDirectory)
 	}
 	
 }

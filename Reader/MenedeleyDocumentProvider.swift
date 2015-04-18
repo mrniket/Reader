@@ -14,6 +14,21 @@ class MendeleyDocumentProvider: DocumentProviderType {
 	
 	var delegate: MendeleyDocumentProviderDelegate?
 	
+	var applicationSupportDirectory: NSURL {
+		get {
+			var appSupportDir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
+			let readerSupportDir = NSURL(fileURLWithPath: appSupportDir)!.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
+			if !(NSFileManager.defaultManager().fileExistsAtPath(readerSupportDir.absoluteString!)) {
+				var error: NSError?
+				NSFileManager.defaultManager().createDirectoryAtURL(readerSupportDir, withIntermediateDirectories: true, attributes: nil, error: &error)
+				if error != nil {
+					println(error?.localizedDescription)
+				}
+			}
+			return readerSupportDir
+		}
+	}
+	
 	init(delegate: MendeleyDocumentProviderDelegate) {
 		self.delegate = delegate
 	}
@@ -32,11 +47,19 @@ class MendeleyDocumentProvider: DocumentProviderType {
 	
 	func downloadDocument(id: String) {
 		if MendeleyKit.sharedInstance().isAuthenticated {
-			MendeleyKit.sharedInstance().fileWithFileID(id, saveToURL: NSBundle.mainBundle().bundleURL, progressBlock: { (number: NSNumber?) -> Void in
-				
+			MendeleyKit.sharedInstance().fileWithFileID(id, saveToURL: applicationSupportDirectory.URLByAppendingPathComponent("KLEE.pdf"), progressBlock: { (number: NSNumber?) -> Void in
+				if let float = number as? Float {
+					let percentage = float * 100
+					println("downloading file: \(percentage)% complete")
+				}
 				}, completionBlock: { (success: Bool, error: NSError?) -> Void in
-					println("it is \(success) that we have successfully downloaded a file!")
-					println("and this is why \(error)")
+					if error != nil {
+						println("it is \(success) that we have successfully downloaded a file!")
+						println("and this is why \(error)")
+					}
+					if success {
+						self.delegate?.downloadedDocument(id)
+					}
 			})
 		}
 	}
