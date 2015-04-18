@@ -9,6 +9,9 @@
 
 import Foundation
 
+
+let pdftaggerPath: String = NSBundle.mainBundle().pathForResource("pdftagger", ofType: "jar", inDirectory: "Java")!
+
 /**
 Tags a PDF file and adds it to the library
 
@@ -17,7 +20,7 @@ Tags a PDF file and adds it to the library
 public func tagPDF(#filePath: String) {
     let task = NSTask()
     task.launchPath = "/usr/bin/java"
-    task.arguments = ["-jar", "/Users/Niket/projects/pdftagger/out/artifacts/pdftagger_jar/pdftagger.jar", "-mode", "tag", "-s", filePath, "-o", ReaderConfig.pdfLibraryPath.path! + filePath.lastPathComponent]
+    task.arguments = ["-jar", pdftaggerPath, "-mode", "tag", "-s", filePath, "-o", ReaderConfig.pdfLibraryPath.path! + filePath.lastPathComponent]
     task.launch()
     task.waitUntilExit()
 }
@@ -33,7 +36,7 @@ public func parsePDF(#filePath: String) -> NSData {
     let task = NSTask()
     let pipe = NSPipe()
     task.launchPath = "/usr/bin/java"
-    task.arguments = ["-jar", "/Users/Niket/projects/pdftagger/out/artifacts/pdftagger_jar/pdftagger.jar", "-mode", "parse", "-s", filePath]
+    task.arguments = ["-jar", pdftaggerPath, "-mode", "parse", "-s", filePath]
     task.standardOutput = pipe
     task.launch()
     return pipe.fileHandleForReading.readDataToEndOfFile()
@@ -50,7 +53,7 @@ public func isTaggedPDF(#filePath: String) -> Bool {
     let task = NSTask()
     let pipe = NSPipe()
     task.launchPath = "/usr/bin/java"
-    task.arguments = ["-jar", "/Users/Niket/projects/pdftagger/out/artifacts/pdftagger_jar/pdftagger.jar", "-mode", "check", "-s", filePath]
+    task.arguments = ["-jar", pdftaggerPath, "-mode", "check", "-s", filePath]
     task.standardOutput = pipe
     task.launch()
     if let result = NSString(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding:NSUTF8StringEncoding) {

@@ -39,6 +39,7 @@
 		17F72A101AE15BE7007B5391 /* DocumentProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */; };
 		17F72A121AE15D94007B5391 /* MenedeleyDocumentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */; };
 		17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */; };
+		17F72A181AE2BD9A007B5391 /* Java in Resources */ = {isa = PBXBuildFile; fileRef = 17F72A171AE2BD9A007B5391 /* Java */; };
 		C7AEDB24855C16DB40591072 /* Pods_ReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentProviderType.swift; sourceTree = "<group>"; };
 		17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenedeleyDocumentProvider.swift; sourceTree = "<group>"; };
 		17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MendeleyLibraryViewController.swift; sourceTree = "<group>"; };
+		17F72A171AE2BD9A007B5391 /* Java */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Java; sourceTree = "<group>"; };
 		387452B497149C7463152098 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		4B2B29E445550AB881633CEA /* Pods-ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E9091F9D5D913AC6198D83A /* Pods-ReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		17432C101AC9B6B600AA5859 = {
 			isa = PBXGroup;
 			children = (
+				17F72A171AE2BD9A007B5391 /* Java */,
 				17432C1B1AC9B6B600AA5859 /* Reader */,
 				17432C301AC9B6B600AA5859 /* ReaderTests */,
 				17432C1A1AC9B6B600AA5859 /* Products */,
@@ -331,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F72A181AE2BD9A007B5391 /* Java in Resources */,
 				17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */,
 				17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */,
 			);
