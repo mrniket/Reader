@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/Niket/Library/Developer/Shared/Documentation/DocSets/com.mendeley.mendeleykit.MendeleyKit.docset
+Time: 2015-04-17 15:07:42 +0000

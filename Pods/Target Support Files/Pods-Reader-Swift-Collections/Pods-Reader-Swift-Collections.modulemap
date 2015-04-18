@@ -1,0 +1,6 @@
+framework module Swift_Collections {
+  umbrella header "Pods-Reader-Swift-Collections-umbrella.h"
+
+  export *
+  module * { export * }
+}

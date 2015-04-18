@@ -1,0 +1,26 @@
+{
+  "name": "Swift-Collections",
+  "version": "0.1.0",
+  "summary": "Set, Multimap, and Tree collections for Swift",
+  "description": "More Collections for Swift introduces a few useful native collection types not currently in Swift.\nThese collections are designed to coexist with the Swift framework.\n\nThis library's API follow Swift's Array and Dictionary API closely. It is also influenced by\nApple's Foundation Framework and\n[Google's Guava collections](https://code.google.com/p/guava-libraries/wiki/GuavaExplained).\nMore Collections for Swift are designed to be as simple as possible while still satisfying a\nmajority of each collection’s use cases.\n",
+  "homepage": "https://github.com/jbulat/Swift-Collections",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jarrett Bulat": "https://github.com/jbulat"
+  },
+  "source": {
+    "git": "https://github.com/jbulat/Swift-Collections.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.10"
+  },
+  "source_files": [
+    "Source",
+    "Source/**/*.{swift}"
+  ]
+}

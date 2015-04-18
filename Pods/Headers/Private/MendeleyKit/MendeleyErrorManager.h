@@ -1,0 +1,1 @@
+../../../MendeleyKit/MendeleyKit/MendeleyKit/Utils/Error Management/MendeleyErrorManager.h

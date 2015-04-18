@@ -1,0 +1,1 @@
+../../../MendeleyKit/MendeleyKit/MendeleyKit/Utils/Error Management/NSError+Exceptions.h

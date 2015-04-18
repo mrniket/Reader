@@ -1,0 +1,1 @@
+../../../MendeleyKit/MendeleyKit/MendeleyKit/Public Interface/API Interfaces/MendeleyMetadataAPI.h

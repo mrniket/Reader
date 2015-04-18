@@ -1,0 +1,30 @@
+PODS:
+  - MendeleyKit (1.0.5)
+  - Nimble (0.4.2)
+  - Swift-Collections (0.1.0)
+
+DEPENDENCIES:
+  - MendeleyKit (from `https://github.com/Mendeley/mendeleykit.git`)
+  - Nimble (~> 0.4.0)
+  - Swift-Collections (from `https://github.com/mrniket/Swift-Collections`)
+
+EXTERNAL SOURCES:
+  MendeleyKit:
+    :git: https://github.com/Mendeley/mendeleykit.git
+  Swift-Collections:
+    :git: https://github.com/mrniket/Swift-Collections
+
+CHECKOUT OPTIONS:
+  MendeleyKit:
+    :commit: 09a687ae4e418589bb86eb5a0ef96e57305127ce
+    :git: https://github.com/Mendeley/mendeleykit.git
+  Swift-Collections:
+    :commit: e090e683db1adba1f60d4c9b3126fae8adbc6738
+    :git: https://github.com/mrniket/Swift-Collections
+
+SPEC CHECKSUMS:
+  MendeleyKit: a08b1a59d41428a019d477c3ad2b9a205fccff3c
+  Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
+  Swift-Collections: bf6861078b76c1c1947647d99904f6f552fd86a7
+
+COCOAPODS: 0.36.3

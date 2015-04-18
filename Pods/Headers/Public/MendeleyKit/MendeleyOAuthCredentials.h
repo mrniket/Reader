@@ -1,0 +1,1 @@
+../../../MendeleyKit/MendeleyKit/MendeleyKit/Networking/OAuth/MendeleyOAuthCredentials.h

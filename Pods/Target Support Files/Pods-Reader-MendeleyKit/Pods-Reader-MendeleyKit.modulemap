@@ -1,0 +1,6 @@
+framework module MendeleyKit {
+  umbrella header "Pods-Reader-MendeleyKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

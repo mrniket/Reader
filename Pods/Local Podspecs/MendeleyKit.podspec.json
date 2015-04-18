@@ -1,0 +1,49 @@
+{
+  "name": "MendeleyKit",
+  "version": "1.0.5",
+  "summary": "The Mendeley Objective C client SDK.",
+  "description": "                   # MendeleyKit\n                   The open source Mendeley Objective C Kit.\n\n                   ## Features\n                   * Access to Mendeley REST API endpoints and handling of JSON responses\n                   * Provide model classes for essential Mendeley objects such as Mendeley documents\n                   * OAuth2 authentication and login as well as automatic handling of access refresh\n",
+  "homepage": "https://github.com/Mendeley/mendeleykit",
+  "license": "Apache Licence, Version 2.0",
+  "authors": {
+    "Mendeley iOS": "ios@mendeley.com"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/Mendeley/mendeleykit.git",
+    "tag": "1.0.5"
+  },
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.8"
+  },
+  "source_files": [
+    "MendeleyKit",
+    "MendeleyKit/**/*.{h,m}"
+  ],
+  "exclude_files": [
+    "MendeleyKit/MendeleyKitTests",
+    "MendeleyKit/MendeleyKitExample"
+  ],
+  "ios": {
+    "exclude_files": "MendeleyKit/MendeleyKitOSX",
+    "frameworks": [
+      "MobileCoreServices",
+      "SystemConfiguration",
+      "Security",
+      "Foundation"
+    ]
+  },
+  "osx": {
+    "exclude_files": "MendeleyKit/**/UIKit/*.{h,m}",
+    "frameworks": [
+      "Foundation",
+      "CoreFoundation",
+      "AppKit",
+      "Security",
+      "WebKit",
+      "CoreServices"
+    ]
+  },
+  "prefix_header_contents": "  #ifdef __OBJC__\n    #import <Security/Security.h>\n    #if __IPHONE_OS_VERSION_MIN_REQUIRED\n      #import <SystemConfiguration/SystemConfiguration.h>\n      #import <MobileCoreServices/MobileCoreServices.h>\n    #else\n      #import <SystemConfiguration/SystemConfiguration.h>\n      #import <CoreServices/CoreServices.h>\n    #endif\n    #import \"MendeleyLog.h\"\n    #import \"MendeleyGlobals.h\"\n    #import \"MendeleyError.h\"\n    #import \"MendeleyErrorManager.h\"\n    #import \"NSError+Exceptions.h\"\n  #endif /* __OBJC__*/\n"
+}
