@@ -14,21 +14,6 @@ class MendeleyDocumentProvider: DocumentProviderType {
 	
 	var delegate: MendeleyDocumentProviderDelegate?
 	
-	var applicationSupportDirectory: NSURL {
-		get {
-			var appSupportDir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
-			let readerSupportDir = NSURL(fileURLWithPath: appSupportDir)!.URLByAppendingPathComponent(NSBundle.mainBundle().bundleIdentifier!)
-			if !(NSFileManager.defaultManager().fileExistsAtPath(readerSupportDir.absoluteString!)) {
-				var error: NSError?
-				NSFileManager.defaultManager().createDirectoryAtURL(readerSupportDir, withIntermediateDirectories: true, attributes: nil, error: &error)
-				if error != nil {
-					println(error?.localizedDescription)
-				}
-			}
-			return readerSupportDir
-		}
-	}
-	
 	init(delegate: MendeleyDocumentProviderDelegate) {
 		self.delegate = delegate
 	}
@@ -45,9 +30,10 @@ class MendeleyDocumentProvider: DocumentProviderType {
 		}
 	}
 	
-	func downloadDocument(id: String) {
+	func downloadDocument(#id: String, filename: String) {
 		if MendeleyKit.sharedInstance().isAuthenticated {
-			MendeleyKit.sharedInstance().fileWithFileID(id, saveToURL: applicationSupportDirectory.URLByAppendingPathComponent("KLEE.pdf"), progressBlock: { (number: NSNumber?) -> Void in
+			let fileURL = ReaderConfig.pdfLibraryPath.URLByAppendingPathComponent(filename)
+			MendeleyKit.sharedInstance().fileWithFileID(id, saveToURL: fileURL, progressBlock: { (number: NSNumber?) -> Void in
 				if let float = number as? Float {
 					let percentage = float * 100
 					println("downloading file: \(percentage)% complete")
@@ -58,7 +44,7 @@ class MendeleyDocumentProvider: DocumentProviderType {
 						println("and this is why \(error)")
 					}
 					if success {
-						self.delegate?.downloadedDocument(id)
+						self.delegate?.downloadedDocument(fileURL)
 					}
 			})
 		}
@@ -68,7 +54,7 @@ class MendeleyDocumentProvider: DocumentProviderType {
 
 protocol MendeleyDocumentProviderDelegate: class {
 	
-	func downloadedDocument(id: String)
+	func downloadedDocument(location: NSURL)
 	func fetchedFileList(files: [MendeleyFile])
 	
 }

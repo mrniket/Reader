@@ -10,8 +10,8 @@
                 <windowController id="pDK-aM-M7w" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="kHm-aD-K6h">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="66" y="1213" width="480" height="270"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+                        <rect key="contentRect" x="0.0" y="0.0" width="480" height="270"/>
                         <rect key="screenRect" x="-228" y="900" width="1920" height="1057"/>
                     </window>
                     <connections>
@@ -728,7 +728,7 @@
                                     <items>
                                         <menuItem title="Mendeley Library" keyEquivalent="M" id="sFH-J3-oae">
                                             <connections>
-                                                <segue destination="i2n-uF-Mho" kind="modal" id="MGN-dY-tIK"/>
+                                                <segue destination="i2n-uF-Mho" kind="show" id="MGN-dY-tIK"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
@@ -781,8 +781,7 @@
                 <windowController id="i2n-uF-Mho" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmQ-no-ZEl">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="66" y="1213" width="600" height="270"/>
+                        <rect key="contentRect" x="0.0" y="0.0" width="600" height="270"/>
                         <rect key="screenRect" x="-228" y="900" width="1920" height="1057"/>
                     </window>
                     <connections>
@@ -791,7 +790,7 @@
                 </windowController>
                 <customObject id="Nuo-qc-WzO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="516"/>
+            <point key="canvasLocation" x="-590" y="504"/>
         </scene>
         <!--Mendeley Library-->
         <scene sceneID="f3L-es-81A">
@@ -802,12 +801,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IN-Dl-Qip">
-                                <rect key="frame" x="20" y="20" width="560" height="230"/>
+                                <rect key="frame" x="20" y="41" width="560" height="209"/>
                                 <clipView key="contentView" id="4yQ-hG-8b8">
                                     <rect key="frame" x="1" y="17" width="238" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="NRz-2i-HhQ" id="Cqw-dO-3he">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="NRz-2i-HhQ" id="Cqw-dO-3he">
                                             <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -884,21 +883,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-nn-2pX">
+                                <rect key="frame" x="512" y="3" width="74" height="32"/>
+                                <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SEx-AQ-YPs">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openButtonClicked:" target="vd7-41-g3a" id="pfh-he-tEV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vsc-nn-2pX" secondAttribute="bottom" constant="10" id="2wT-1R-m3e"/>
                             <constraint firstItem="4IN-Dl-Qip" firstAttribute="top" secondItem="F8t-xk-f1s" secondAttribute="top" constant="20" id="3B8-xm-8uh"/>
                             <constraint firstAttribute="trailing" secondItem="4IN-Dl-Qip" secondAttribute="trailing" constant="20" id="Pqt-5q-qc7"/>
                             <constraint firstItem="4IN-Dl-Qip" firstAttribute="leading" secondItem="F8t-xk-f1s" secondAttribute="leading" constant="20" id="Pyf-xf-Uka"/>
-                            <constraint firstAttribute="bottom" secondItem="4IN-Dl-Qip" secondAttribute="bottom" constant="20" id="aJU-Xq-FOc"/>
+                            <constraint firstItem="vsc-nn-2pX" firstAttribute="top" secondItem="4IN-Dl-Qip" secondAttribute="bottom" constant="10" id="fPR-d2-rW3"/>
+                            <constraint firstAttribute="trailing" secondItem="vsc-nn-2pX" secondAttribute="trailing" constant="20" id="fce-Yt-fui"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="openButton" destination="vsc-nn-2pX" id="56t-eM-fVv"/>
                         <outlet property="tableView" destination="Cqw-dO-3he" id="eH6-IH-isz"/>
                     </connections>
                 </viewController>
                 <customObject id="JJK-iP-Zy9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="954"/>
+            <point key="canvasLocation" x="-590" y="942"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -906,8 +918,7 @@
                 <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="WindowController" customModule="Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="600" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -981,7 +992,7 @@
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="858"/>
         </scene>
     </scenes>
 </document>

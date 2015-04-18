@@ -17,9 +17,9 @@ class PDFTests: XCTestCase {
     
     override class func setUp() {
         super.setUp()
-        ReaderConfig.pdfLibraryPath = "/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/"
-        if (NSFileManager.defaultManager().fileExistsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf")) {
-            NSFileManager.defaultManager().removeItemAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/TestLibrary/KLEE.pdf", error: nil)
+        ReaderConfig.pdfLibraryFolder = "TestLibrary/"
+        if (NSFileManager.defaultManager().fileExistsAtPath(ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")) {
+            NSFileManager.defaultManager().removeItemAtPath(ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf", error: nil)
         }
         tagPDF(filePath: self.testPdfFilePath)
     }
@@ -37,11 +37,11 @@ class PDFTests: XCTestCase {
     // MARK: PDFTagger Tests
     
     func testPDFTaggedSucceeded() {
-        expect(NSFileManager.defaultManager().fileExistsAtPath(ReaderConfig.pdfLibraryPath + PDFTests.testPdfFilePath.lastPathComponent)).to(beTrue())
+        expect(NSFileManager.defaultManager().fileExistsAtPath(ReaderConfig.pdfLibraryPath.path! + PDFTests.testPdfFilePath.lastPathComponent)).to(beTrue())
     }
     
     func testParsePDF() {
-        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")
         let expectedData = NSFileManager.defaultManager().contentsAtPath("/Users/Niket/Desktop/ReaderFiles/TestFiles/test.xml")
         let string = NSString(data: parsedData, encoding: 4)
         let anotherString = NSString(data: expectedData!, encoding: 4)
@@ -49,21 +49,21 @@ class PDFTests: XCTestCase {
     }
     
     func testParseXML() {
-        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
         expect(content.totalNumberOfHeadersAndParagraphs).to(equal(96))
     }
     
     func testTagCheckPDF() {
         expect(isTaggedPDF(filePath: PDFTests.testPdfFilePath)).to(beFalse())
-        expect(isTaggedPDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")).to(beTrue())
+        expect(isTaggedPDF(filePath: ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")).to(beTrue())
     }
     
     
     // MARK: PDFUAContent Tests
     
     func testHeaderStructureParsedCorrectly() {
-        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
         let tableOfContents = content.tableOfContents
         expect(tableOfContents.count).to(equal(27))
@@ -73,7 +73,7 @@ class PDFTests: XCTestCase {
     }
     
     func testInitialCurrentParagraphAndSection() {
-        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath + "KLEE.pdf")
+        let parsedData = parsePDF(filePath: ReaderConfig.pdfLibraryPath.path! + "KLEE.pdf")
         let content = PDFUAXMLParser(xmlData: parsedData).parse()
         expect(content.currentParagraph?.content).to(beginWith("Many classes of errors, such as functional correctness bugs, are difficult to find without executing a piece of code."))
         expect(content.currentSection?.content).to(equal("Introduction"))

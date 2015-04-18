@@ -14,6 +14,7 @@ class MendeleyLibraryViewController: NSViewController, NSTableViewDataSource {
 	// MARK: IBOutlets
 	
 	@IBOutlet weak var tableView: NSTableView!
+	@IBOutlet weak var openButton: NSButton!
 	
 	// MARK: Properties
 	
@@ -26,10 +27,21 @@ class MendeleyLibraryViewController: NSViewController, NSTableViewDataSource {
         super.viewDidLoad()
         // Do view setup here.
 		dataProvider = MendeleyDocumentProvider(delegate: self)
-		dataProvider?.listDocuments()
 		tableView.setDataSource(self)
+		tableView.setDelegate(self)
+		dataProvider?.listDocuments()
+		openButton.enabled = false
     }
-    
+	
+	@IBAction func openButtonClicked(sender: NSButton) {
+		if let mendeleyFiles = files {
+			let index: Int = tableView.selectedRow
+			if index > 0 {
+				let file = mendeleyFiles[index]
+				dataProvider?.downloadDocument(id: file.object_ID, filename: file.file_name)
+			}
+		}
+	}
 }
 
 extension MendeleyLibraryViewController {
@@ -64,17 +76,24 @@ extension MendeleyLibraryViewController {
 	
 }
 
+extension MendeleyLibraryViewController: NSTableViewDelegate {
+	
+	func tableViewSelectionDidChange(notification: NSNotification) {
+		openButton.enabled = true
+	}
+	
+}
+
 extension MendeleyLibraryViewController: MendeleyDocumentProviderDelegate {
 	
 	func fetchedFileList(files: [MendeleyFile]) {
-		println("got here")
 		self.files = files
 		tableView.reloadData()
-		dataProvider?.downloadDocument("1913086d-034c-a833-3a5d-ae4ce4ed741d")
 	}
 	
-	func downloadedDocument(id: String) {
-		println(dataProvider?.applicationSupportDirectory)
+	func downloadedDocument(location: NSURL) {
+		let documentController: NSDocumentController = NSDocumentController.sharedDocumentController() as! NSDocumentController
+		documentController.openDocumentWithContentsOfURL(location, display: true, completionHandler: { _ in })
 	}
 	
 }

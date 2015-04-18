@@ -9,7 +9,7 @@
 protocol DocumentProviderType: class {
 	
 	func listDocuments()
-	func downloadDocument(id: String)
+	func downloadDocument(#id: String, filename: String)
 	
 }
 
