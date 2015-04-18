@@ -36,6 +36,9 @@
 		17C8018A1ACBFC7B00E1EB82 /* PDFUAContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801871ACB468D00E1EB82 /* PDFUAContent.swift */; };
 		17F415501ACAEC4E00B3A0DC /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */; };
 		17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F415531ACAF4C000B3A0DC /* PDFTagger.swift */; };
+		17F72A101AE15BE7007B5391 /* DocumentProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */; };
+		17F72A121AE15D94007B5391 /* MenedeleyDocumentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */; };
+		17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */; };
 		C7AEDB24855C16DB40591072 /* Pods_ReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		17C801871ACB468D00E1EB82 /* PDFUAContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAContent.swift; sourceTree = "<group>"; };
 		17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 		17F415531ACAF4C000B3A0DC /* PDFTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTagger.swift; sourceTree = "<group>"; };
+		17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentProviderType.swift; sourceTree = "<group>"; };
+		17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenedeleyDocumentProvider.swift; sourceTree = "<group>"; };
+		17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MendeleyLibraryViewController.swift; sourceTree = "<group>"; };
 		387452B497149C7463152098 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		4B2B29E445550AB881633CEA /* Pods-ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E9091F9D5D913AC6198D83A /* Pods-ReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 			children = (
 				17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */,
 				17BE96F01ADC02C600F80A4D /* MendeleyAuthenticator.swift */,
+				17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */,
+				17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			children = (
 				17AB59741AD737520053B5F4 /* ContentViewController.swift */,
 				175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */,
+				17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +444,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
+				17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */,
+				17F72A121AE15D94007B5391 /* MenedeleyDocumentProvider.swift in Sources */,
 				175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */,
 				17BE96EF1ADC01E900F80A4D /* AuthenticatorType.swift in Sources */,
 				17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */,
@@ -451,6 +462,7 @@
 				17C497861AD6D8F600AE6969 /* ContentView.swift in Sources */,
 				17432C231AC9B6B600AA5859 /* Document.swift in Sources */,
 				17C4977B1AD6A8C600AE6969 /* ContentPresenterDelegate.swift in Sources */,
+				17F72A101AE15BE7007B5391 /* DocumentProviderType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
