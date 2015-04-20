@@ -44,7 +44,9 @@ class Document: NSDocument {
 //        {
         if !isTaggedPDF(filePath: url.path!) {
             tagPDF(filePath: url.path!)
-        }
+		} else {
+			copyFileToLibrary(filePath: url)
+		}
 //        } ~> {
             let data = parsePDF(filePath: ReaderConfig.pdfLibraryPath.URLByAppendingPathComponent(url.lastPathComponent!).path!)
             self.content = PDFUAXMLParser(xmlData: data).parse()

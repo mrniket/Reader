@@ -43,6 +43,19 @@ public func parsePDF(#filePath: String) -> NSData {
 }
 
 /**
+Copies the file given to the library if a file with teh same name does not already exist
+
+:param: filePath The URL of the path to copy
+*/
+public func copyFileToLibrary(#filePath: NSURL) {
+	var error: NSError?
+	NSFileManager.defaultManager().copyItemAtURL(filePath, toURL: ReaderConfig.pdfLibraryPath.URLByAppendingPathComponent(filePath.lastPathComponent!), error: &error)
+	if error != nil {
+		println(error?.description)
+	}
+}
+
+/**
 Checks if the PDF file at the path given is a tagged PDF
 
 :param: filePath The file path of the PDF
