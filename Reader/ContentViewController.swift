@@ -37,13 +37,6 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 		contentView.delegate = self
 	}
 	
-	override func changeFont(sender: AnyObject?) {
-		if var fontManagerSender = sender as? NSFontManager {
-			var font = fontManagerSender.convertFont(paragraphView.textStorage!.font!)
-			paragraphView.textStorage!.font = font
-		}
-	}
-	
 	override var representedObject: AnyObject? {
 		didSet {
 			// Update the view, if already loaded.
@@ -62,6 +55,8 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 	
 }
 
+// MARK: - ContentViewDelegate
+
 extension ContentViewController: ContentViewDelegate {
  
 	func leftArrowKeyPressed() {
@@ -70,6 +65,25 @@ extension ContentViewController: ContentViewDelegate {
 	
 	func rightArrowKeyPressed() {
 		document?.content?.moveToNextParagraph()
+	}
+	
+}
+
+// MARK: - Font and Color Changes
+
+extension ContentViewController {
+	
+	override func changeFont(sender: AnyObject?) {
+		if var fontManager = sender as? NSFontManager {
+			var font = fontManager.convertFont(paragraphView.textStorage!.font!)
+			paragraphView.textStorage!.font = font
+		}
+	}
+	
+	override func changeColor(sender: AnyObject?) {
+		if var colorPanel = sender as? NSColorPanel {
+			paragraphView.backgroundColor = colorPanel.color
+		}
 	}
 	
 }
