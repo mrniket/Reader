@@ -920,6 +920,20 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="600" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="7A80C8FA-1049-462C-B913-435B30865D5A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Vd0-Gv-h33">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="8Kx-Y8-taX"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="6bl-MA-AZD"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="bii-I9-BN6"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="M2p-9z-CCv"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ypS-mX-p9W"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="6bl-MA-AZD"/>
+                                <toolbarItem reference="ypS-mX-p9W"/>
+                                <toolbarItem reference="8Kx-Y8-taX"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>

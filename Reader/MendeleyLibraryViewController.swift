@@ -23,20 +23,20 @@ class MendeleyLibraryViewController: NSViewController, NSTableViewDataSource {
 	
 	// MARK: Overrides
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do view setup here.
 		dataProvider = MendeleyDocumentProvider(delegate: self)
 		tableView.setDataSource(self)
 		tableView.setDelegate(self)
 		dataProvider?.listDocuments()
 		openButton.enabled = false
-    }
+	}
 	
 	@IBAction func openButtonClicked(sender: NSButton) {
 		if let mendeleyFiles = files {
 			let index: Int = tableView.selectedRow
-			if index > 0 {
+			if index >= 0 {
 				let file = mendeleyFiles[index]
 				dataProvider?.downloadDocument(id: file.object_ID, filename: file.file_name)
 			}
@@ -58,17 +58,17 @@ extension MendeleyLibraryViewController {
 			let file = mendeleyFiles[row]
 			let columnIdentifier = tableColumn!.identifier
 			switch (columnIdentifier) {
-				case "filename":
-					return file.file_name
-				case "filesize":
-					let size = file.size as Int
-					return String(size / 1024)
-				case "docid":
-					return file.document_id
-				case "id":
-					return file.object_ID
-				default:
-					return "What is this?"
+			case "filename":
+				return file.file_name
+			case "filesize":
+				let size = file.size as Int
+				return String(size / 1024)
+			case "docid":
+				return file.document_id
+			case "id":
+				return file.object_ID
+			default:
+				return "What is this?"
 			}
 		}
 		return "No File Found"

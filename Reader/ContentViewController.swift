@@ -35,7 +35,13 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 		// Do any additional setup after loading the view.
 		let contentView = view as! ContentView
 		contentView.delegate = self
-		
+	}
+	
+	override func changeFont(sender: AnyObject?) {
+		if var fontManagerSender = sender as? NSFontManager {
+			var font = fontManagerSender.convertFont(paragraphView.textStorage!.font!)
+			paragraphView.textStorage!.font = font
+		}
 	}
 	
 	override var representedObject: AnyObject? {
