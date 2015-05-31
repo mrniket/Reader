@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Window Controller-->
@@ -70,20 +71,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="YOs-Ct-t7L" customClass="SVGKLayeredImageView">
+                            <webView canDrawConcurrently="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QbY-jl-KAl">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Ztw-aC-bMb"/>
-                            </imageView>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                            </webView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="YOs-Ct-t7L" firstAttribute="leading" secondItem="StB-Gt-heI" secondAttribute="leading" id="10z-5L-0aB"/>
-                            <constraint firstAttribute="trailing" secondItem="YOs-Ct-t7L" secondAttribute="trailing" id="2QF-Bp-BjL"/>
-                            <constraint firstItem="YOs-Ct-t7L" firstAttribute="top" secondItem="StB-Gt-heI" secondAttribute="top" id="PuT-6B-N1H"/>
-                            <constraint firstAttribute="bottom" secondItem="YOs-Ct-t7L" secondAttribute="bottom" id="wF0-pY-t10"/>
+                            <constraint firstAttribute="trailing" secondItem="QbY-jl-KAl" secondAttribute="trailing" id="5Cr-Na-h8t"/>
+                            <constraint firstItem="QbY-jl-KAl" firstAttribute="top" secondItem="StB-Gt-heI" secondAttribute="top" id="L5j-DT-KLe"/>
+                            <constraint firstItem="QbY-jl-KAl" firstAttribute="leading" secondItem="StB-Gt-heI" secondAttribute="leading" id="ObP-rl-rcz"/>
+                            <constraint firstAttribute="bottom" secondItem="QbY-jl-KAl" secondAttribute="bottom" id="nhc-Cs-k69"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="YOs-Ct-t7L" id="Q4c-O8-VUa"/>
+                        <outlet property="webView" destination="QbY-jl-KAl" id="cLj-b9-Huk"/>
                     </connections>
                 </viewController>
                 <customObject id="BYl-j7-ZAV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
