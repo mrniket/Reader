@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="FigureCollectionCell" customModule="Reader" customModuleProvider="target"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+        <customView identifier="cell" id="c22-O7-iKe" customClass="FigureCollectionCell" customModule="Reader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="1" width="281" height="116"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsN-8g-7TU">
+                    <rect key="frame" x="64" y="50" width="154" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="BHI-SW-CCa"/>
+                    </constraints>
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="NDY-xn-6pp">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="vsN-8g-7TU" secondAttribute="centerX" id="OiC-al-Scc"/>
+                <constraint firstAttribute="centerY" secondItem="vsN-8g-7TU" secondAttribute="centerY" id="x0a-K3-Dce"/>
+            </constraints>
+            <connections>
+                <outlet property="headingLabel" destination="vsN-8g-7TU" id="ylv-Wc-mim"/>
+            </connections>
+            <point key="canvasLocation" x="263.5" y="270"/>
         </customView>
     </objects>
 </document>

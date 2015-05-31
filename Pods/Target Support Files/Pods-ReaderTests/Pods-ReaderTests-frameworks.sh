@@ -48,12 +48,20 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'CocoaLumberjack.framework'
+  install_framework 'JNWCollectionView.framework'
+  install_framework 'JNWScrollView.framework'
   install_framework 'MendeleyKit.framework'
   install_framework 'Nimble.framework'
+  install_framework 'SVGKit.framework'
   install_framework 'Swift_Collections.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'CocoaLumberjack.framework'
+  install_framework 'JNWCollectionView.framework'
+  install_framework 'JNWScrollView.framework'
   install_framework 'MendeleyKit.framework'
   install_framework 'Nimble.framework'
+  install_framework 'SVGKit.framework'
   install_framework 'Swift_Collections.framework'
 fi

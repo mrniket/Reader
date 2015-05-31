@@ -1,0 +1,1 @@
+../../../SVGKit/Source/SVGKit_logging.h

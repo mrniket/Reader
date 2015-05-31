@@ -7,9 +7,22 @@
 //
 
 import Cocoa
+import SVGKit
 
 class CollectionViewDetailViewController: NSViewController {
 
+
+	
+	@IBOutlet weak var imageView: SVGKLayeredImageView!
+	
+	var svg: String = "" {
+		didSet {
+			let source = SVGKSource(contentsOfString: svg)
+			let image = SVGKImage(source: source)
+			image.size = imageView.bounds.size
+			imageView.image = image
+		}
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

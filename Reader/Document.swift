@@ -31,6 +31,9 @@ class Document: NSDocument {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)!
         let windowController = storyboard.instantiateControllerWithIdentifier("Document Window Controller") as! NSWindowController
         self.addWindowController(windowController)
+		
+		let figureWindowController = storyboard.instantiateControllerWithIdentifier("Figure Window Document") as! NSWindowController
+		self.addWindowController(figureWindowController)
     }
 
     override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {

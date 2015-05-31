@@ -20,7 +20,7 @@ Tags a PDF file and adds it to the library
 public func tagPDF(#filePath: String) {
     let task = NSTask()
     task.launchPath = "/usr/bin/java"
-    task.arguments = ["-jar", pdftaggerPath, "-mode", "tag", "-s", filePath, "-o", ReaderConfig.pdfLibraryPath.path! + filePath.lastPathComponent]
+    task.arguments = ["-jar", pdftaggerPath, "-mode", "tag", "-s", filePath, "-o", ReaderConfig.pdfLibraryPath.path! + "/" + filePath.lastPathComponent]
     task.launch()
     task.waitUntilExit()
 }

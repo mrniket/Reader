@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Figure {
+	let heading: String
+	let svg: String
+}

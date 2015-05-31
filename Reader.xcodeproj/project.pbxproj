@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		036696B48CA2554B84B67CA0 /* Pods_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4A088F3BF0A608C3D11288 /* Pods_Reader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		173B46CC1B1A47A50083592C /* CollectionViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B46CB1B1A47A50083592C /* CollectionViewDetailViewController.swift */; };
 		17432C1F1AC9B6B600AA5859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */; };
 		17432C231AC9B6B600AA5859 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C221AC9B6B600AA5859 /* Document.swift */; };
 		17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17432C241AC9B6B600AA5859 /* Images.xcassets */; };
 		17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17432C261AC9B6B600AA5859 /* Main.storyboard */; };
 		17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C331AC9B6B600AA5859 /* ReaderTests.swift */; };
 		175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */; };
+		176024E81B1A29A00078A0C0 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176024E61B1A29A00078A0C0 /* CollectionViewController.swift */; };
+		176024EB1B1A2C500078A0C0 /* FigureCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176024EA1B1A2C4F0078A0C0 /* FigureCollectionCell.swift */; };
+		176024ED1B1A2CAC0078A0C0 /* FigureCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176024EC1B1A2CAC0078A0C0 /* FigureCollectionCell.xib */; };
+		179438331B1A522200454DE7 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F800021B1A1F9000FBBF42 /* Figure.swift */; };
+		179438381B1A57EE00454DE7 /* FigureWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179438361B1A57EE00454DE7 /* FigureWindowController.swift */; };
 		17AB59751AD737520053B5F4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB59741AD737520053B5F4 /* ContentViewController.swift */; };
 		17BE96EF1ADC01E900F80A4D /* AuthenticatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */; };
 		17BE96F11ADC02C600F80A4D /* MendeleyAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE96F01ADC02C600F80A4D /* MendeleyAuthenticator.swift */; };
@@ -40,6 +46,7 @@
 		17F72A121AE15D94007B5391 /* MenedeleyDocumentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */; };
 		17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */; };
 		17F72A181AE2BD9A007B5391 /* Java in Resources */ = {isa = PBXBuildFile; fileRef = 17F72A171AE2BD9A007B5391 /* Java */; };
+		17F800031B1A1F9000FBBF42 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F800021B1A1F9000FBBF42 /* Figure.swift */; };
 		C7AEDB24855C16DB40591072 /* Pods_ReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -56,6 +63,7 @@
 /* Begin PBXFileReference section */
 		09A59E7033137569B9D999D6 /* Pods-Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.release.xcconfig"; sourceTree = "<group>"; };
 		16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		173B46CB1B1A47A50083592C /* CollectionViewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDetailViewController.swift; sourceTree = "<group>"; };
 		17432C191AC9B6B600AA5859 /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17432C1D1AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 		17432C321AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C331AC9B6B600AA5859 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
 		175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountsViewController.swift; sourceTree = "<group>"; };
+		176024E61B1A29A00078A0C0 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		176024EA1B1A2C4F0078A0C0 /* FigureCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureCollectionCell.swift; sourceTree = "<group>"; };
+		176024EC1B1A2CAC0078A0C0 /* FigureCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FigureCollectionCell.xib; sourceTree = "<group>"; };
+		179438361B1A57EE00454DE7 /* FigureWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureWindowController.swift; sourceTree = "<group>"; };
 		17AB59741AD737520053B5F4 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorType.swift; sourceTree = "<group>"; };
 		17BE96F01ADC02C600F80A4D /* MendeleyAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MendeleyAuthenticator.swift; sourceTree = "<group>"; };
@@ -85,6 +97,7 @@
 		17F72A111AE15D94007B5391 /* MenedeleyDocumentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenedeleyDocumentProvider.swift; sourceTree = "<group>"; };
 		17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MendeleyLibraryViewController.swift; sourceTree = "<group>"; };
 		17F72A171AE2BD9A007B5391 /* Java */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Java; sourceTree = "<group>"; };
+		17F800021B1A1F9000FBBF42 /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
 		387452B497149C7463152098 /* Pods-Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reader/Pods-Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		4B2B29E445550AB881633CEA /* Pods-ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E9091F9D5D913AC6198D83A /* Pods-ReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReaderTests/Pods-ReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +152,7 @@
 				17C4977F1AD6B98800AE6969 /* ViewControllers */,
 				17C4977E1AD6B97F00AE6969 /* WindowControllers */,
 				17C497771AD6A85100AE6969 /* Presenters */,
+				17F800011B1A1F5A00FBBF42 /* Figure View */,
 				17BE96EB1ADC001E00F80A4D /* Interactors */,
 				17432C1E1AC9B6B600AA5859 /* AppDelegate.swift */,
 				17C8017D1ACAFAE300E1EB82 /* Configuration.swift */,
@@ -205,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				17C497801AD6B9C800AE6969 /* WindowController.swift */,
+				179438361B1A57EE00454DE7 /* FigureWindowController.swift */,
 			);
 			name = WindowControllers;
 			sourceTree = "<group>";
@@ -215,6 +230,8 @@
 				17AB59741AD737520053B5F4 /* ContentViewController.swift */,
 				175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */,
 				17F72A131AE18D15007B5391 /* MendeleyLibraryViewController.swift */,
+				176024E61B1A29A00078A0C0 /* CollectionViewController.swift */,
+				173B46CB1B1A47A50083592C /* CollectionViewDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -224,8 +241,18 @@
 			children = (
 				17C497851AD6D8F600AE6969 /* ContentView.swift */,
 				17C497881AD734F800AE6969 /* ContentTextView.swift */,
+				176024EA1B1A2C4F0078A0C0 /* FigureCollectionCell.swift */,
+				176024EC1B1A2CAC0078A0C0 /* FigureCollectionCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		17F800011B1A1F5A00FBBF42 /* Figure View */ = {
+			isa = PBXGroup;
+			children = (
+				17F800021B1A1F9000FBBF42 /* Figure.swift */,
+			);
+			name = "Figure View";
 			sourceTree = "<group>";
 		};
 		6D463E7BDA3577D69D2C5C07 /* Frameworks */ = {
@@ -337,6 +364,7 @@
 				17F72A181AE2BD9A007B5391 /* Java in Resources */,
 				17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */,
 				17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */,
+				176024ED1B1A2CAC0078A0C0 /* FigureCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,15 +477,20 @@
 			files = (
 				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
 				17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */,
+				17F800031B1A1F9000FBBF42 /* Figure.swift in Sources */,
 				17F72A121AE15D94007B5391 /* MenedeleyDocumentProvider.swift in Sources */,
 				175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */,
 				17BE96EF1ADC01E900F80A4D /* AuthenticatorType.swift in Sources */,
 				17C497811AD6B9C800AE6969 /* WindowController.swift in Sources */,
 				17C8017E1ACAFAE300E1EB82 /* Configuration.swift in Sources */,
 				17BE96F11ADC02C600F80A4D /* MendeleyAuthenticator.swift in Sources */,
+				176024EB1B1A2C500078A0C0 /* FigureCollectionCell.swift in Sources */,
 				17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */,
+				176024E81B1A29A00078A0C0 /* CollectionViewController.swift in Sources */,
+				173B46CC1B1A47A50083592C /* CollectionViewDetailViewController.swift in Sources */,
 				17AB59751AD737520053B5F4 /* ContentViewController.swift in Sources */,
 				17C497791AD6A87100AE6969 /* ContentPresenterType.swift in Sources */,
+				179438381B1A57EE00454DE7 /* FigureWindowController.swift in Sources */,
 				17C4977D1AD6B73000AE6969 /* ContentPresenter.swift in Sources */,
 				17C497891AD734F800AE6969 /* ContentTextView.swift in Sources */,
 				17432C1F1AC9B6B600AA5859 /* AppDelegate.swift in Sources */,
@@ -477,6 +510,7 @@
 				17C8018A1ACBFC7B00E1EB82 /* PDFUAContent.swift in Sources */,
 				17C497821AD6C57D00AE6969 /* ContentPresenterType.swift in Sources */,
 				17C801831ACB100700E1EB82 /* Configuration.swift in Sources */,
+				179438331B1A522200454DE7 /* Figure.swift in Sources */,
 				17C801801ACB028600E1EB82 /* PDFTests.swift in Sources */,
 				17C801891ACBFC7700E1EB82 /* PDFUAXMLParser.swift in Sources */,
 				17C497841AD6C57D00AE6969 /* ContentPresenter.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import JNWCollectionView
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8AFBA203-F38D-4204-A4D1-6FC2845F84C6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Reader</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2CDF8430DAF5D47C0F47D1AE7898F6FFA538D2D9</key>
+		<string>https://gitlab.doc.ic.ac.uk/ns3311/reader.git</string>
+		<key>5CA7E12CCFDA32E2B62B17C695E12D1C2D670AEB</key>
+		<string>https://github.com/grobid/grobid.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Reader.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2CDF8430DAF5D47C0F47D1AE7898F6FFA538D2D9</key>
+		<string>..</string>
+		<key>5CA7E12CCFDA32E2B62B17C695E12D1C2D670AEB</key>
+		<string>../Java/grobid</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://gitlab.doc.ic.ac.uk/ns3311/reader.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2CDF8430DAF5D47C0F47D1AE7898F6FFA538D2D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5CA7E12CCFDA32E2B62B17C695E12D1C2D670AEB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>grobid</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2CDF8430DAF5D47C0F47D1AE7898F6FFA538D2D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Reader</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module JNWCollectionView {
+  umbrella header "Pods-Reader-JNWCollectionView-umbrella.h"
+
+  export *
+  module * { export * }
+}

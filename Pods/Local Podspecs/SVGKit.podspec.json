@@ -1,0 +1,78 @@
+{
+  "name": "SVGKit",
+  "version": "2.x",
+  "license": "MIT",
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.9"
+  },
+  "summary": "Display and interact with SVG Images on iOS, using native rendering (CoreAnimation).",
+  "homepage": "https://github.com/SVGKit/SVGKit",
+  "authors": {
+    "Steven Fusco": "sfusco@spiral.local",
+    "adamgit": "adam.m.s.martin@gmail.com",
+    "Kevin Stich": "stich@50cubes.com",
+    "Joshua May": "notjosh@gmail.com",
+    "Eric Man": "Eric@eric-mans-macbook-2.local",
+    "Matt Rajca": "matt.rajca@me.com",
+    "Moritz Pfeiffer": "moritz.pfeiffer@alp-phone.ch",
+    "C.W. Betts": "computers57@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/MaddTheSane/SVGKit.git",
+    "branch": "master"
+  },
+  "ios": {
+    "source_files": [
+      "Source/*{.h,m}",
+      "Source/DOM classes/**/*.{h,m}",
+      "Source/Exporters/*.{h,m}",
+      "Source/Parsers/**/*.{h,m}",
+      "Source/QuartzCore additions/**/*.{h,m}",
+      "Source/Sources/**/*.{h,m}",
+      "Source/UIKit additions/**/*.{h,m}",
+      "Source/Shared additions/**/*.{h,m}",
+      "Source/Unsorted/**/*.{h,m}"
+    ],
+    "exclude_files": [
+      "Source/DOM classes/**/*{OSX}.{h,m}",
+      "Source/Exporters/SVGKExporterNSData.{h,m}"
+    ],
+    "prefix_header_file": "XCodeProjectData/SVGKit-iOS/SVGKit-iOS-Prefix.pch"
+  },
+  "osx": {
+    "source_files": [
+      "Source/*{.h,m}",
+      "Source/DOM classes/**/*.{h,m}",
+      "Source/Exporters/*.{h,m}",
+      "Source/Parsers/**/*.{h,m}",
+      "Source/QuartzCore additions/**/*.{h,m}",
+      "Source/Sources/**/*.{h,m}",
+      "Source/AppKit additions/**/*.{h,m}",
+      "Source/Shared additions/**/*.{h,m}",
+      "Source/Unsorted/**/*.{h,m}",
+      "Source/UIKit additions/*View*.h"
+    ],
+    "exclude_files": [
+      "Source/DOM classes/**/*{iOS}.{h,m}",
+      "Source/Exporters/SVGKExporterUIImage.{h,m}"
+    ],
+    "prefix_header_file": "XCodeProjectData/SVGKit-OSX/SVGKit-OSX-Prefix.pch"
+  },
+  "libraries": "xml2",
+  "frameworks": [
+    "QuartzCore",
+    "CoreText"
+  ],
+  "dependencies": {
+    "CocoaLumberjack": [
+      "~> 2.x"
+    ]
+  },
+  "requires_arc": true,
+  "xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++11",
+    "CLANG_CXX_LIBRARY": "libc++",
+    "HEADER_SEARCH_PATHS": "$(SDKROOT)/usr/include/libxml2"
+  }
+}

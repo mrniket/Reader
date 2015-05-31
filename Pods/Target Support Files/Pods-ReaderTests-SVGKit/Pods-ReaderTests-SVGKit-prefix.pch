@@ -1,0 +1,25 @@
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#endif
+
+#import "Pods-ReaderTests-environment.h"
+//
+// Prefix header for all source files of the 'SVGKit' target in the 'SVGKit' project
+//
+
+#include <tgmath.h>
+
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreText/CoreText.h>
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+	#import <Cocoa/Cocoa.h>
+	#import <QuartzCore/QuartzCore.h>
+	#import <CocoaLumberjack/CocoaLumberjack.h>
+
+	#define NSStringFromCGPoint(thePoint) NSStringFromPoint(thePoint)
+	#define NSStringFromCGRect(theRect) NSStringFromRect(theRect)
+	#define NSStringFromCGSize(theSize) NSStringFromSize(theSize)
+
+	#import "SVGKit_logging.h"
+#endif

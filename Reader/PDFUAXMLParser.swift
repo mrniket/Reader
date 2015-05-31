@@ -17,6 +17,7 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
     private var previousSection: PDFUAContentNode?
     private var headerStack : Stack<PDFUAContentNode>
     private var currentSection: PDFUAContentNode?
+	private var figures: [Figure] = []
     
     init(xmlData: NSData) {
         self.content = PDFUAContent()
@@ -28,6 +29,7 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
     
     func parse() -> PDFUAContent {
         self.parser.parse()
+		content.figures = figures
         return content
     }
     
@@ -53,10 +55,20 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
             if let actualText: String = attributeDict["actualText"] as? String {
                 content.addParagraph(paragraph: actualText, forSection: currentSection)
             }
-        }
+		} else if isFigure(elementName) {
+			var figureHeading = "No Heading Extracted"
+			var figureSVG = ""
+			if let heading = attributeDict["h"] as? String {
+				figureHeading = heading
+			}
+			if let svg = attributeDict["actualText"] as? String {
+				figureSVG = svg
+			}
+			figures.append(Figure(heading: figureHeading, svg: figureSVG))
+		}
 
     }
-    
+	
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if isHeader(elementName) {
             currentSection = headerStack.pop()
@@ -72,4 +84,9 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
         let elementNameUpperCased: String? = elementName?.uppercaseString
         return elementNameUpperCased == "P"
     }
+	
+	private func isFigure(elementName: String?) -> Bool {
+		let elementNameUpperCased: String? = elementName?.uppercaseString
+		return elementNameUpperCased == "FIGURE"
+	}
 }

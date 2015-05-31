@@ -72,6 +72,8 @@ public class PDFUAContent {
 		}
 	}
 	
+	var figures : [Figure] = []
+	
 	// MARK: -
 	
 	private let rootNode = PDFUAContentNode(type: PDFUAContentType.Document, level: 0, content: "")

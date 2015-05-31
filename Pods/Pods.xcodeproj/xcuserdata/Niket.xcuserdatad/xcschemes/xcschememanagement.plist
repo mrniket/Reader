@@ -4,7 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-Reader-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Reader-JNWCollectionView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Reader-JNWScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Reader-MendeleyKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Reader-SVGKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,12 +39,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ReaderTests-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ReaderTests-JNWCollectionView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ReaderTests-JNWScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ReaderTests-MendeleyKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-ReaderTests-Nimble.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ReaderTests-SVGKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +82,77 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>31CF739DFEA868C6DFBDA353</key>
+		<key>33F92495B6051A59BC0030B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B4158C42CB0ED8A2CB35A4C</key>
+		<key>45488FCDF0102B45B9F38FBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50F8BD72EBA18391B5F8C721</key>
+		<key>4F93856AFBC13DD3C9789725</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE9E2C4AB2CEE43BEF6A87A9</key>
+		<key>5047D88AC23B9B070B5F452F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8107F55381F516097586181</key>
+		<key>55C0968FD2B292215B6D39FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6ADB5C3640AFD75D4256A4</key>
+		<key>625944FEF7FCCDCCCB9BF6F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7A3D308B1F2229C6CB1D1EF</key>
+		<key>6584196146BB33E7AA7125B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>747C938AA5C57D0EDD54B765</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>898305A1B4C11555F09D8414</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E52FCB01CC6C3CDD44E56B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9685D784BD66F949CFB4FD2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>975F2F02632BDFCCAC990083</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B48EE24AD21551BCD27E6615</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5887B4CAF45E9D045E45A32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDCABC4B59D62A2B4D5E2D38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
