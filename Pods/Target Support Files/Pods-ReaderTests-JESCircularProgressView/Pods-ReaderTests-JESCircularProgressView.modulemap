@@ -1,0 +1,6 @@
+framework module JESCircularProgressView {
+  umbrella header "Pods-ReaderTests-JESCircularProgressView-umbrella.h"
+
+  export *
+  module * { export * }
+}

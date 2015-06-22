@@ -32,9 +32,8 @@ class CollectionViewController: NSViewController, JNWCollectionViewDataSource, J
         // Do view setup here.
 		collectionView = JNWCollectionView(frame: view.bounds)
 		collectionView.dataSource = self;
-		collectionView.backgroundColor = NSColor.redColor()
 		collectionView.delegate = self
-		collectionView.autoresizingMask = .ViewHeightSizable
+		collectionView.autoresizingMask = .ViewHeightSizable | .ViewWidthSizable
 		let collectionViewLayout = JNWCollectionViewListLayout(collectionView: collectionView)
 		collectionViewLayout.delegate = self
 		collectionViewLayout.rowHeight = 116
@@ -49,7 +48,9 @@ class CollectionViewController: NSViewController, JNWCollectionViewDataSource, J
 	func collectionView(collectionView: JNWCollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> JNWCollectionViewCell! {
 		if let cell : FigureCollectionCell = collectionView.dequeueReusableCellWithIdentifier("cell") as? FigureCollectionCell {
 			let row = indexPath.jnw_item
-			cell.figure = figures[row]
+			if row < figures.count {
+				cell.figure = figures[row]
+			}
 			return cell
 		}
 		return FigureCollectionCell()

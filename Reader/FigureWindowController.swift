@@ -15,7 +15,7 @@ class FigureWindowController: NSWindowController {
 			if let splitViewController = window!.contentViewController as? NSSplitViewController,
 				splitItem = splitViewController.splitViewItems[0] as? NSSplitViewItem,
 				figureCollectionViewController = splitItem.viewController as? CollectionViewController {
-					println("got here!!!")
+//					println("got here!!!")
 				figureCollectionViewController.document = document as? Document
 			}
 			

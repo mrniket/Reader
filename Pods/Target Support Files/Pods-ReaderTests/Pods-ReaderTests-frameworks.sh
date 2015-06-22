@@ -49,6 +49,7 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'CocoaLumberjack.framework'
+  install_framework 'JESCircularProgressView.framework'
   install_framework 'JNWCollectionView.framework'
   install_framework 'JNWScrollView.framework'
   install_framework 'MendeleyKit.framework'
@@ -58,6 +59,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'CocoaLumberjack.framework'
+  install_framework 'JESCircularProgressView.framework'
   install_framework 'JNWCollectionView.framework'
   install_framework 'JNWScrollView.framework'
   install_framework 'MendeleyKit.framework'

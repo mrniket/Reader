@@ -21,6 +21,10 @@ class FigureCollectionCell: JNWCollectionViewCell {
 		}
 	}
 	
+	override func awakeFromNib() {
+		self.backgroundColor = NSColor(calibratedRed: 125, green: 170, blue: 208, alpha: 1)
+	}
+	
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 

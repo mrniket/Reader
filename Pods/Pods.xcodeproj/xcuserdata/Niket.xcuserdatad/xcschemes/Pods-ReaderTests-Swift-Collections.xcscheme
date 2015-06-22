@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E52FCB01CC6C3CDD44E56B9"
+               BlueprintIdentifier = "89B3632D596FB5174467AA26"
                BuildableName = "Swift_Collections.framework"
                BlueprintName = "Pods-ReaderTests-Swift-Collections"
                ReferencedContainer = "container:Pods.xcodeproj">

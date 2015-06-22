@@ -9,6 +9,7 @@ target 'Reader' do
 	pod 'MendeleyKit', :git => 'https://github.com/Mendeley/mendeleykit.git'
 	pod 'SVGKit', :git => 'https://github.com/MaddTheSane/SVGKit.git'
 	pod 'JNWCollectionView'
+	pod "JESCircularProgressView"
 end
 
 target 'ReaderTests' do
@@ -18,4 +19,5 @@ target 'ReaderTests' do
 	pod 'MendeleyKit', :git => 'https://github.com/Mendeley/mendeleykit.git'
 	pod 'SVGKit', :git => 'https://github.com/MaddTheSane/SVGKit.git'
 	pod 'JNWCollectionView'
+	pod "JESCircularProgressView"
 end

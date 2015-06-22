@@ -62,6 +62,12 @@ public class PDFUAContent {
 		}
 	}
 	
+	var paragraphList: [String] {
+		get {
+			return content.traverse.breadthFirst.filter({ $0.type == PDFUAContentType.P }).map { $0.content }
+		}
+	}
+	
 	var currentParagraph : PDFUAContentNode?
 	
 	var currentSection : PDFUAContentNode?
@@ -84,6 +90,7 @@ public class PDFUAContent {
 			return content.traverse.breadthFirst
 		}
 	}
+	
 	private var contentListIndex: Int
 	
 	

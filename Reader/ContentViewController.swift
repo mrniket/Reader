@@ -7,15 +7,16 @@
 //
 
 import Cocoa
+import JESCircularProgressView
 
 class ContentViewController: NSViewController, ContentPresenterDelegate {
 	
 	// MARK: - IBOutlets
-	
-	@IBOutlet weak var sectionField: NSTextField!
 	@IBOutlet var paragraphView: ContentTextView!
 	
+	@IBOutlet var backgroundColorTextView: NSTextField!
 	
+	@IBOutlet var progessIndicator: JESCircularProgressView!
 	// MARK: - Properties
 	
 	weak var document: Document? {
@@ -26,8 +27,14 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 			contentPresenter.delegate = self
 			
 			document!.content?.presenter = contentPresenter
+			
+			if let paragraphList = document!.content?.paragraphList {
+				self.progress = Progress(paragraphList: paragraphList)
+			}
 		}
 	}
+	
+	var progress: Progress?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,6 +42,14 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 		// Do any additional setup after loading the view.
 		let contentView = view as! ContentView
 		contentView.delegate = self
+		paragraphView.font = NSFont.systemFontOfSize(24);
+		
+		let myLayer = CALayer()
+		myLayer.frame = self.view.bounds
+		myLayer.backgroundColor = NSColor.redColor().CGColor
+		self.view.layer = myLayer
+		self.view.layer?.setNeedsDisplay()
+		
 	}
 	
 	override var representedObject: AnyObject? {
@@ -50,7 +65,9 @@ class ContentViewController: NSViewController, ContentPresenterDelegate {
 	}
 	
 	func sectionChanged(sectionText: String) {
-		sectionField.stringValue = sectionText
+		if let windowController = self.view.window?.windowController() as? WindowController {
+			windowController.title = sectionText
+		}
 	}
 	
 }
@@ -61,10 +78,19 @@ extension ContentViewController: ContentViewDelegate {
  
 	func leftArrowKeyPressed() {
 		document?.content?.moveToPreviousParagraph()
+		if let p = progress {
+			p.previous()
+			progessIndicator.setProgress(CGFloat(p.percentage()), animated: true)
+		}
+		
 	}
 	
 	func rightArrowKeyPressed() {
 		document?.content?.moveToNextParagraph()
+		if let p = progress {
+			p.next()
+			progessIndicator.setProgress(CGFloat(p.percentage()), animated: true)
+		}
 	}
 	
 }
@@ -83,6 +109,7 @@ extension ContentViewController {
 	override func changeColor(sender: AnyObject?) {
 		if var colorPanel = sender as? NSColorPanel {
 			paragraphView.backgroundColor = colorPanel.color
+			backgroundColorTextView.backgroundColor = colorPanel.color
 		}
 	}
 	

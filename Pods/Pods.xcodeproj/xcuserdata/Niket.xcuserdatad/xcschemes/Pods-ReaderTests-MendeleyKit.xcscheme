@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDCABC4B59D62A2B4D5E2D38"
+               BlueprintIdentifier = "4E045686C8ABC0A81C83E887"
                BuildableName = "MendeleyKit.framework"
                BlueprintName = "Pods-ReaderTests-MendeleyKit"
                ReferencedContainer = "container:Pods.xcodeproj">

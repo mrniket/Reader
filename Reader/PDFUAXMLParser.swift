@@ -59,7 +59,9 @@ class PDFUAXMLParser: NSObject, NSXMLParserDelegate {
 			var figureHeading = "No Heading Extracted"
 			var figureSVG = ""
 			if let heading = attributeDict["h"] as? String {
-				figureHeading = heading
+				if heading != "" {
+					figureHeading = heading	
+				}
 			}
 			if let svg = attributeDict["actualText"] as? String {
 				figureSVG = svg

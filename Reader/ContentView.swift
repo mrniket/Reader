@@ -43,7 +43,6 @@ class ContentView: NSView {
         default:
             break
         }
-        super.keyDown(theEvent)
     }
     
 }

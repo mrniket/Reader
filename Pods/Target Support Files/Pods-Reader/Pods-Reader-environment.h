@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 0
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 0
 
+// JESCircularProgressView
+#define COCOAPODS_POD_AVAILABLE_JESCircularProgressView
+#define COCOAPODS_VERSION_MAJOR_JESCircularProgressView 0
+#define COCOAPODS_VERSION_MINOR_JESCircularProgressView 0
+#define COCOAPODS_VERSION_PATCH_JESCircularProgressView 3
+
 // JNWCollectionView
 #define COCOAPODS_POD_AVAILABLE_JNWCollectionView
 #define COCOAPODS_VERSION_MAJOR_JNWCollectionView 1

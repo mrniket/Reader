@@ -12,20 +12,18 @@ import WebKit
 class CollectionViewDetailViewController: NSViewController {
 
 
-	@IBOutlet weak var webView: WebView!
-	
+
+	var webView: WKWebView?
 	
 	var svg: String = "" {
 		didSet {
 			let svgWithDimensions = svg.stringByReplacingOccurrencesOfString("<svg", withString: "<svg width=\"800px\" height=\"800px\"", options: NSStringCompareOptions.allZeros, range: nil)
 
-			webView.mainFrame.frameView.documentView.scaleUnitSquareToSize(NSMakeSize(1.6, 1.6))
-			webView.mainFrame.loadHTMLString(svgWithDimensions, baseURL: ReaderConfig.pdfLibraryPath)
+			webView?.loadHTMLString(svgWithDimensions, baseURL: nil)
+//			webView?.scaleUnitSquareToSize(NSMakeSize(1.6, 1.6))
+//			webView?//.mainFrame.loadHTMLString(svgWithDimensions, baseURL: ReaderConfig.pdfLibraryPath)
+//			webView?.mainFrame.frameView.documentView.scaleUnitSquareToSize(NSMakeSize(1.6, 1.6))
 
-//			let source = SVGKSource(contentsOfString: svg)
-//			let image = SVGKImage(source: source)
-//			image.size = imageView.bounds.size
-//			imageView.image = image
 		}
 	}
 	
@@ -33,6 +31,18 @@ class CollectionViewDetailViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		
+		let webViewConfiguration = WKWebViewConfiguration()
+		webView = WKWebView(frame: self.view.bounds, configuration: webViewConfiguration)
+		webView?.allowsMagnification = true
+		webView?.translatesAutoresizingMaskIntoConstraints = false
+		self.view.addSubview(webView!)
+		view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: webView!, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
+		view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: webView!, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
+		view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: webView!, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+		view.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: webView!, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+		
+		
     }
     
 }

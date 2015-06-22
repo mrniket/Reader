@@ -9,8 +9,19 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-    
-    // MARK: Overrides
+	
+	//MARK: Properties
+	@IBOutlet var titleLabelCell: NSTextFieldCell!
+	
+	var title: String = "Hello" {
+		didSet {
+			titleLabelCell.title = title
+		}
+	}
+	
+	
+	
+    // MARK: - Overrides
     
     override var document: AnyObject? {
         didSet {

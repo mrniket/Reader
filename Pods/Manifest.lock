@@ -7,6 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - JESCircularProgressView (0.0.3)
   - JNWCollectionView (1.3):
     - JNWScrollView
   - JNWScrollView (0.1)
@@ -17,6 +18,7 @@ PODS:
   - Swift-Collections (0.1.0)
 
 DEPENDENCIES:
+  - JESCircularProgressView
   - JNWCollectionView
   - MendeleyKit (from `https://github.com/Mendeley/mendeleykit.git`)
   - Nimble (~> 0.4.0)
@@ -44,6 +46,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  JESCircularProgressView: 8cdadf9573c859c4927756b1607b1e0abeecfc19
   JNWCollectionView: 3bad227492d5e8219c2664b7878e3ca20fd29f92
   JNWScrollView: d98a3bf2b663e1251a20cdd3a306123f132a7033
   MendeleyKit: a08b1a59d41428a019d477c3ad2b9a205fccff3c

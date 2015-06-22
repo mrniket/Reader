@@ -14,10 +14,12 @@
 		17432C251AC9B6B600AA5859 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17432C241AC9B6B600AA5859 /* Images.xcassets */; };
 		17432C281AC9B6B600AA5859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17432C261AC9B6B600AA5859 /* Main.storyboard */; };
 		17432C341AC9B6B600AA5859 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17432C331AC9B6B600AA5859 /* ReaderTests.swift */; };
+		174FFE481B342A4C00427646 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174FFE471B342A4C00427646 /* QuartzCore.framework */; };
 		175CEADC1ADD4B5C00C66C16 /* UserAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */; };
 		176024E81B1A29A00078A0C0 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176024E61B1A29A00078A0C0 /* CollectionViewController.swift */; };
 		176024EB1B1A2C500078A0C0 /* FigureCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176024EA1B1A2C4F0078A0C0 /* FigureCollectionCell.swift */; };
 		176024ED1B1A2CAC0078A0C0 /* FigureCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 176024EC1B1A2CAC0078A0C0 /* FigureCollectionCell.xib */; };
+		177D5DE71B34A3790018F785 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D5DE61B34A3790018F785 /* Progress.swift */; };
 		179438331B1A522200454DE7 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F800021B1A1F9000FBBF42 /* Figure.swift */; };
 		179438381B1A57EE00454DE7 /* FigureWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179438361B1A57EE00454DE7 /* FigureWindowController.swift */; };
 		17AB59751AD737520053B5F4 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AB59741AD737520053B5F4 /* ContentViewController.swift */; };
@@ -40,6 +42,7 @@
 		17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801871ACB468D00E1EB82 /* PDFUAContent.swift */; };
 		17C801891ACBFC7700E1EB82 /* PDFUAXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */; };
 		17C8018A1ACBFC7B00E1EB82 /* PDFUAContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C801871ACB468D00E1EB82 /* PDFUAContent.swift */; };
+		17E1E80A1B31861800527DCB /* TitleToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E1E8091B31861800527DCB /* TitleToolbarItem.swift */; };
 		17F415501ACAEC4E00B3A0DC /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */; };
 		17F415541ACAF4C000B3A0DC /* PDFTagger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F415531ACAF4C000B3A0DC /* PDFTagger.swift */; };
 		17F72A101AE15BE7007B5391 /* DocumentProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */; };
@@ -73,10 +76,12 @@
 		17432C2D1AC9B6B600AA5859 /* ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17432C321AC9B6B600AA5859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17432C331AC9B6B600AA5859 /* ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
+		174FFE471B342A4C00427646 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		175CEADA1ADD4B5C00C66C16 /* UserAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountsViewController.swift; sourceTree = "<group>"; };
 		176024E61B1A29A00078A0C0 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		176024EA1B1A2C4F0078A0C0 /* FigureCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureCollectionCell.swift; sourceTree = "<group>"; };
 		176024EC1B1A2CAC0078A0C0 /* FigureCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FigureCollectionCell.xib; sourceTree = "<group>"; };
+		177D5DE61B34A3790018F785 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		179438361B1A57EE00454DE7 /* FigureWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FigureWindowController.swift; sourceTree = "<group>"; };
 		17AB59741AD737520053B5F4 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		17BE96EE1ADC01E900F80A4D /* AuthenticatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorType.swift; sourceTree = "<group>"; };
@@ -91,6 +96,8 @@
 		17C8017F1ACB028600E1EB82 /* PDFTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTests.swift; sourceTree = "<group>"; };
 		17C801851ACB37B400E1EB82 /* PDFUAXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAXMLParser.swift; sourceTree = "<group>"; };
 		17C801871ACB468D00E1EB82 /* PDFUAContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUAContent.swift; sourceTree = "<group>"; };
+		17E1E8091B31861800527DCB /* TitleToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToolbarItem.swift; sourceTree = "<group>"; };
+		17E1E80B1B32CA5300527DCB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 		17F415531ACAF4C000B3A0DC /* PDFTagger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFTagger.swift; sourceTree = "<group>"; };
 		17F72A0F1AE15BE7007B5391 /* DocumentProviderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentProviderType.swift; sourceTree = "<group>"; };
@@ -109,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174FFE481B342A4C00427646 /* QuartzCore.framework in Frameworks */,
 				036696B48CA2554B84B67CA0 /* Pods_Reader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +135,7 @@
 		17432C101AC9B6B600AA5859 = {
 			isa = PBXGroup;
 			children = (
+				177D5DE61B34A3790018F785 /* Progress.swift */,
 				17F72A171AE2BD9A007B5391 /* Java */,
 				17432C1B1AC9B6B600AA5859 /* Reader */,
 				17432C301AC9B6B600AA5859 /* ReaderTests */,
@@ -148,6 +157,7 @@
 		17432C1B1AC9B6B600AA5859 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				17E1E80B1B32CA5300527DCB /* MyPlayground.playground */,
 				17C497871AD734D700AE6969 /* Views */,
 				17C4977F1AD6B98800AE6969 /* ViewControllers */,
 				17C4977E1AD6B97F00AE6969 /* WindowControllers */,
@@ -163,6 +173,7 @@
 				17F4154F1ACAEC4E00B3A0DC /* CustomOperators.swift */,
 				17432C241AC9B6B600AA5859 /* Images.xcassets */,
 				17432C261AC9B6B600AA5859 /* Main.storyboard */,
+				17E1E8091B31861800527DCB /* TitleToolbarItem.swift */,
 				17432C1C1AC9B6B600AA5859 /* Supporting Files */,
 			);
 			path = Reader;
@@ -258,6 +269,7 @@
 		6D463E7BDA3577D69D2C5C07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				174FFE471B342A4C00427646 /* QuartzCore.framework */,
 				DD4A088F3BF0A608C3D11288 /* Pods_Reader.framework */,
 				16B0817AC888A17EFDFFD262 /* Pods_ReaderTests.framework */,
 			);
@@ -475,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177D5DE71B34A3790018F785 /* Progress.swift in Sources */,
 				17C801881ACB468D00E1EB82 /* PDFUAContent.swift in Sources */,
 				17F72A141AE18D15007B5391 /* MendeleyLibraryViewController.swift in Sources */,
 				17F800031B1A1F9000FBBF42 /* Figure.swift in Sources */,
@@ -490,6 +503,7 @@
 				173B46CC1B1A47A50083592C /* CollectionViewDetailViewController.swift in Sources */,
 				17AB59751AD737520053B5F4 /* ContentViewController.swift in Sources */,
 				17C497791AD6A87100AE6969 /* ContentPresenterType.swift in Sources */,
+				17E1E80A1B31861800527DCB /* TitleToolbarItem.swift in Sources */,
 				179438381B1A57EE00454DE7 /* FigureWindowController.swift in Sources */,
 				17C4977D1AD6B73000AE6969 /* ContentPresenter.swift in Sources */,
 				17C497891AD734F800AE6969 /* ContentTextView.swift in Sources */,
